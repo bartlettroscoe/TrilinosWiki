@@ -1,8 +1,8 @@
 # TrilinosWiki
 
-This is git repository to facilitate changes to the Trilinos wiki https://github.com/trilinos/Trilinos.wiki.git using pull requests.
+This is git repository to facilitate changes to the Trilinos wiki https://github.com/trilinos/Trilinos/wiki/ site (through the git repo git@github.com:Trilinos/Trilinos.wiki.git) using pull requests (PRs).
 
-To use this to suggest changes to the Trilinos wiki, do the following:
+To use this Github repo to suggest changes to the Trilinos wiki as PRs, do the following:
 
 **1) Create a fork of this github Wiki repo**
 
