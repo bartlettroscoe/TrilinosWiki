@@ -2,6 +2,13 @@ User and client support is an essential element of any actively used and develop
 
 The Trilinos Project is committed to providing support for its user community, prioritizing support activities according to its mission requirements.  This policy sketch provides the framework for conducting support activities, roles and responsibilities.  Detailed support strategies for funded projects should be consistent with the policy stated here and provide further detail.
 
+## Trilinos Support Components
+
+The Trilinos Project support strategy is composed of three components:
+- **Prevention:** The most effective approach to providing support is to produce high-quality software design, implementation, documentation and testing.   This enables clients and users to more easily work with the product and reduces the number of support events.  For an ongoing project, the biggest benefit comes from eliminating regressions as the software environment changes.  Careful testing is essential.
+- **Diagnosis:** When support is required, it often requires diagnosing the cause of the support issue.  Trilinos contains a large and complex product suite, so assistance from Trilinos leadership can be essential in identifying the scope and responsibility for handling a support event.
+- **Resolution:** Many support events are easily fixed after the event source is determined.  Trilinos team members are committed to resolving support events as priorities dictate.  Some events are very challenging to resolve and may require a long, concerted effort.  This is especially true of issues that arise only during high-end simulations.  For these events, Trilinos leadership is committed to assigning resources as priorities and urgencies require.
+
 ## Trilinos Support Philosophy
 
 Software support is a significant cost.  Many studies estimate support and maintenance to be 70 - 80% of the total software project cost.  Any improvement in support will have significant impact on quality, cost and time.
