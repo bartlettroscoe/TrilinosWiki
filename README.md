@@ -15,7 +15,6 @@ Click the above "Fork" button to create the GitHub repo:
 ```
 $ git clone git@github.com:trilinos/Trilinos.wiki.git
 $ cd Trilinos.wiki/
-$ git remote add wiki-pr git@github.com:trilinos/TrilinosWiki.git
 $ git remote add my-wiki git@github.com:<yourgithubid>/TrilinosWiki.git
 ```
 
