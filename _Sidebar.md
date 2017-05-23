@@ -17,8 +17,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[CMake](https://github.com/trilinos/Trilinos/wiki/Tools-%7C--CMake)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Doxygen](https://github.com/trilinos/Trilinos/wiki/Tools-%7C-Doxygen)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Mail lists](https://github.com/trilinos/Trilinos/wiki/Tools-%7C-Mail-Lists)  
-&nbsp;&nbsp;&nbsp;&nbsp;[SEMS Dev Env](https://github.com/trilinos/Trilinos/wiki/SEMS-Dev-Env)  
 [Version Control](https://github.com/trilinos/Trilinos/wiki/VC-(VERSION-CONTROL))  
 &nbsp;&nbsp;&nbsp;&nbsp;[Initial git setup](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Initial-Git-Setup)  
 &nbsp;&nbsp;&nbsp;&nbsp;['develop'/'master'](https://github.com/trilinos/Trilinos/wiki/VC-%7C-'develop'-'master'-workflow) ([cheatsheet](https://github.com/trilinos/Trilinos/wiki/VC-|-'develop'-'master'-workfow-cheat-sheet))  
 &nbsp;&nbsp;&nbsp;&nbsp;[Simple centralized workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow)  
+[Building](https://github.com/trilinos/Trilinos/wiki/Building)  
+&nbsp;&nbsp;&nbsp;&nbsp;[SEMS Dev Env](https://github.com/trilinos/Trilinos/wiki/SEMS-Dev-Env)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Mac OS X](https://github.com/trilinos/Trilinos/wiki/Building-on-Mac-OS-X)  
+
