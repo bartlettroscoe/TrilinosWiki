@@ -7,6 +7,8 @@ cd CHECKIN
 ln -s ../cmake/std/sems/checkin-test-sems.sh .
 ``` 
 
+(**WARNING**: The Trilinos git repo must use SSH with the remote URL `git@github.com:trilinos/Trilinos.git` and not HTTPS for access to github.  See [below note](https://github.com/trilinos/Trilinos/wiki/Policies-|-Safe-Checkin-Testing#ssh-vs-https)).
+
 Then when one wants to test and push changes (and the local git repo is "clean" with no modified or untracked files), one can do:
 
 ```
@@ -59,6 +61,10 @@ ctest -j<N> -R <test-name>   # Reproduce failing test(s)
 Many other use cases are also supported.  Some detailed documentation on the checkin-test.py script can be obtained using [checkin-test.py --help](https://tribits.org/doc/TribitsDevelopersGuide.html#checkin-test-py-help).
 
 NOTES:
+
+<a name="ssh-vs-https"/>
+
+* In order for the automated pulls and pushes that the script does to work, the Trilinos git repos must be set up to use SSH to access git instead of HTTPS (i.e. the remote must be `git@github.com:trilinos/Trilinos.git` and **NOT** `https://github.com/trilinos/Trilinos.git`).  See [Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/).
 
 <a name="local-checkin-test-defaults.py"/>
 
