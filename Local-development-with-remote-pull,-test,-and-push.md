@@ -115,6 +115,7 @@ ln -s ../cmake/std/sems/checkin-test-sems.sh .
 ```
 
 NOTES:
+* The access from `<remote-machine>` to the `intermediate-repo` git repo and the GitHub repo must use SSH and must not require an SSH passphrase.  Otherwise, the pulls and pushes on the remote machine will not work because they will require you to type a password (which you can't do from your local machine).
 * You can use a different remote git repo for [`intermediate-repo`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#intermediate_repo) other than your GitHub fork of Trilinos (see [above](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#intermediate_repo)).
 * Other special considerations and tips for setting up a remote pull/test/push server using a Sandia CEE LAN machine are given at [Development and Testing on CEE LAN Machines](https://snl-wiki.sandia.gov/display/TRIL/Development+and+Testing+on+CEE+LAN+machines).
 
