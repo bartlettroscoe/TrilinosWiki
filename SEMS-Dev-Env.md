@@ -42,7 +42,7 @@ $ source $TRILINOS_DIR/cmake/load_sems_dev_env.sh \
    sems-gcc/5.3.0  sems-openmpi/1.10.1  sems-cmake/3.3.2
 ```
 
-Different compilers (GCC, Clang, Intel) and several versions of each can be selected.  Different versions of OpenMPI and CMake can also be selected (see modules starting with `sems-` from `module avail`).  See the default versions for each of these and more documentation in the script [load_sems_dev_env.sh](https://github.com/trilinos/Trilinos/blob/develop/cmake/load_sems_dev_env.sh) itself.  The defaults for GCC, OpenMPI, and CMake selected in the script provide the best combination of build speed, error checking, and portability checking (see [Trilinos Issue #158](https://github.com/trilinos/Trilinos/issues/158) for more background).
+Different compilers (GCC, Clang, Intel) and several versions of each can be selected.  Different versions of OpenMPI and CMake can also be selected (see modules starting with `sems-` from `module avail`).  See the default versions for each of these and more documentation in the script [load_sems_dev_env.sh](https://github.com/trilinos/Trilinos/blob/develop/cmake/load_sems_dev_env.sh) itself.  The defaults for GCC, OpenMPI, and CMake selected match the standard CI build for Trilinos (see [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) and the [post-push CI build](https://github.com/trilinos/Trilinos/wiki/Policies--%7C-Testing#post_push_ci_testing)).
 
 NOTES:
 
