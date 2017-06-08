@@ -14,24 +14,24 @@ Trilinos uses CTest and CDash for testing and display of test results. With CTes
 
 Links to main Trilinos CDash dashboard results and query tools:
 
-+ [Main projects dashboard page for the current day](http://testing.sandia.gov/cdash)
-+ [Subprojects (packages) dashboard page for Trilinos for the current day](http://testing.sandia.gov/cdash/viewSubProjects.php?project=Trilinos) [**Warning**: can be slow to come up]
++ [Main projects dashboard page for the current day](https://testing.sandia.gov/cdash)
++ [Subprojects (packages) dashboard page for Trilinos for the current day](https://testing.sandia.gov/cdash/viewSubProjects.php?project=Trilinos) [**Warning**: can be slow to come up]
   + Tip: To get a quick summary for all the packages that had configure, build, or test failures, sort the packages in descending order by holding down the Shift key and then click twice on the column headers **Configure: Error, Build: Error**, then **Test: Fail**.
-+ [Subproject (package) dashboard page Trilinos package Teuchos for the current day](http://testing.sandia.gov/cdash/index.php?project=Trilinos&subproject=Teuchos)
++ [Subproject (package) dashboard page Trilinos package Teuchos for the current day](https://testing.sandia.gov/cdash/index.php?project=Trilinos&subproject=Teuchos)
    + Tip: To query other packages change 'Teuchos' in the URL to some another package name (e.g. 'Epetra', 'Tpetra', etc.)
-+ [Summary of Trilinos builds for the current day](http://testing.sandia.gov/cdash/index.php?project=Trilinos&display=project)
++ [Summary of Trilinos builds for the current day](https://testing.sandia.gov/cdash/index.php?project=Trilinos&display=project)
    + Tip: To get a quick summary for all the build groups that had configure, build, or test failures, sort the build group rows in descending order by holding down the Shift key and then click twice on the column headers **Configure: Error, Build: Error**, then **Test: Fail**.
    + Tip: To see the individual package builds/tests, click on the name of the build in the **Build Name** field.
    + Tip: To see what files got updated, click the number in the **Update** field.
    + Tip: To exclude bad packages (i.e. packages with build and/or test failures) from the build summaries, click [Show Filters] and then select the filter ('Subprojects', 'exclude', '<BAD_PACKAGE_NAME>').
 + Test query page:
- + [All tests for current day](http://testing.sandia.gov/cdash/queryTests.php?project=Trilinos&showfilters=1) (allows any type of query) [**Warning**: very slow to come up]
- + [Failing tests for current day](http://testing.sandia.gov/cdash/queryTests.php?project=Trilinos&filtercount=1&showfilters=1&field1=status/string&compare1=61&value1=failed) (can only query failed tests) [Comes up fast]
+ + [All tests for current day](https://testing.sandia.gov/cdash/queryTests.php?project=Trilinos&showfilters=1) (allows any type of query) [**Warning**: very slow to come up]
+ + [Failing tests for current day](https://testing.sandia.gov/cdash/queryTests.php?project=Trilinos&filtercount=1&showfilters=1&field1=status/string&compare1=61&value1=failed) (can only query failed tests) [Comes up fast]
    + Tip: To query results for PACKAGEX, select the filter ('TestName', 'starts with', 'PACKAGEX_')
    + Tip: To query passing tests, select the filter ('Status', 'is', 'passed') [Note the lower case 'passed')
    + Tip: To query failing tests, select the filter ('Status', 'is', 'failed') [Note the lower case 'failed')
    + Tip: To see tests for the last two weeks, select the filter ('Build Time', 'is after', '2 weeks ago')
-+ [Current coverage results](http://testing.sandia.gov/extended/cdash/index.php?project=Trilinos&display=project&filtercount=2&showfilters=1&filtercombine=and&field1=buildstarttime/date&compare1=83&value1=7%20days%20ago&field2=buildname/string&compare2=66&value2=_COV) (as of last Saturday)
++ [Current coverage results](https://testing.sandia.gov/extended/cdash/index.php?project=Trilinos&display=project&filtercount=2&showfilters=1&filtercombine=and&field1=buildstarttime/date&compare1=83&value1=7%20days%20ago&field2=buildname/string&compare2=66&value2=_COV) (as of last Saturday)
  + Tip: Click on the Build Name for the MPI or Serial build under 'Nightly' and then go to 'Coverage' to the coverage results for each Trilinos package.
 
 <a name="categories_of_tests"/>
@@ -66,9 +66,9 @@ The default test category set by the Trilinos checkin-test-sems.sh script is `Tr
 
 <a name="post_push_ci_testing"/>
 
-**Post-push Continuous Integration Testing**: Primary Tested Code [[Continuous Integration Build](http://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=3&showfilters=1&filtercombine=and&field1=buildname&compare1=61&value1=Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI&field2=groupname&compare2=61&value2=Continuous&field3=buildstarttime&compare3=84&value3=now)]
+**Post-push Continuous Integration Testing**: Primary Tested Code [[Continuous Integration Build](https://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=3&showfilters=1&filtercombine=and&field1=buildname&compare1=61&value1=Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI&field2=groupname&compare2=61&value2=Continuous&field3=buildstarttime&compare3=84&value3=now)]
 
-A Continuous Integration (CI) server is set up that run the build [Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI](http://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=3&showfilters=1&filtercombine=and&field1=buildname&compare1=61&value1=Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI&field2=groupname&compare2=61&value2=Continuous&field3=buildstarttime&compare3=84&value3=now) in a continuous loop looking for updates to the global repository and when it finds them, it enables the affected packages and runs the builds and tests.  This build is an exact duplicate of the default build MPI_RELEASE_DEBUG_SHARED_PT_CI which is run by the checkin-test-sems.sh script.
+A Continuous Integration (CI) server is set up that run the build [Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI](https://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=3&showfilters=1&filtercombine=and&field1=buildname&compare1=61&value1=Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI&field2=groupname&compare2=61&value2=Continuous&field3=buildstarttime&compare3=84&value3=now) in a continuous loop looking for updates to the global repository and when it finds them, it enables the affected packages and runs the builds and tests.  This build is an exact duplicate of the default build MPI_RELEASE_DEBUG_SHARED_PT_CI which is run by the checkin-test-sems.sh script.
 
 Emails are sent out by CDash to the different package lists `PACKAGE-regression@software.sandia.gov` when errors are detected. The first build of the day is a build from scratch while every subsequent CI iteration is a rebuild and retesting of only the affected packages.  (This greatly speeds up the response time of the CI server compared to always building and testing of of Trilinos at every iteration.)
 
@@ -76,7 +76,7 @@ The main purposes for having a post-push CI server running in addition to pre-pu
 
 <a name="nightly_regression_testing"/>
 
-**Nightly Regression Testing**: Secondary Tested Code [[Nightly Regression Dashboard](http://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=1&showfilters=1&field1=groupname&compare1=61&value1=Nightly)]
+**Nightly Regression Testing**: Secondary Tested Code [[Nightly Regression Dashboard](https://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=1&showfilters=1&field1=groupname&compare1=61&value1=Nightly)]
 
 Each night starting at 12 Midnight MST/MDT, a wide range of configurations of Trilinos are tested on a variety of different platforms for [Secondary Tested (PT) Code](http://trac.trilinos.org/wiki/TribitsLifecycleModelOverview#test_categories). MPI and SERIAL are varied along with DEBUG and RELEASE. Different compilers are used. Builds are performed with shared or static libraries.
 
@@ -84,7 +84,7 @@ The test category set for nightly testing is `Trilinos_TEST_CATEGORIES=NIGHTLY` 
 
 <a name="performance_testing"/>
 
-**Performance Testing**: Secondary Tested Code [[Nightly Performance Dashboard](http://testing.sandia.gov/cdash/index.php?project=Trilinos&display=project&filtercount=2&showfilters=1&filtercombine=and&field1=buildname/string&compare1=63&value1=PERF&field2=groupname/string&compare2=61&value2=Nightly)]
+**Performance Testing**: Secondary Tested Code [[Nightly Performance Dashboard](https://testing.sandia.gov/cdash/index.php?project=Trilinos&display=project&filtercount=2&showfilters=1&filtercombine=and&field1=buildname/string&compare1=63&value1=PERF&field2=groupname/string&compare2=61&value2=Nightly)]
 
 !!! **NOTE: PERFORMANCE TESTING IS CURRENTLY DISABLED** !!!
 
@@ -108,7 +108,7 @@ The first build can be based directly on a git clone, rather than a release-like
 
 <a name="experimental_testing"/>
 
-**Experimental Testing**: Experimental Code [[Experimental Dashboard](http://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=1&showfilters=1&field1=groupname&compare1=61&value1=Experimental)]
+**Experimental Testing**: Experimental Code [[Experimental Dashboard](https://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=1&showfilters=1&field1=groupname&compare1=61&value1=Experimental)]
 
 The experimental dashboard contains a host of experimental builds where no emails are sent out for failed builds. Some of these experimental builds are run by cron jobs every night. Regularly scheduled builds that are run as experimental builds usually have some issues that result in several failed package builds or test failures and are not ready for "prime time" yet. The goal is to get these builds to a state where they can be moved over to regular "Nightly" builds where emails will be sent out reporting failures.
 
@@ -118,7 +118,7 @@ By default, the test category set for experimental testing is `Trilinos_TEST_CAT
 
 <a name="coverage_testing"/>
 
-**Coverage Testing**: Secondary Tested Code [[Current coverage results](http://testing.sandia.gov/extended/cdash/index.php?project=Trilinos&display=project&filtercount=2&showfilters=1&filtercombine=and&field1=buildstarttime/date&compare1=83&value1=7%20days%20ago&field2=buildname/string&compare2=66&value2=_COV) (as of last Saturday)]
+**Coverage Testing**: Secondary Tested Code [[Current coverage results](https://testing.sandia.gov/extended/cdash/index.php?project=Trilinos&display=project&filtercount=2&showfilters=1&filtercombine=and&field1=buildstarttime/date&compare1=83&value1=7%20days%20ago&field2=buildname/string&compare2=66&value2=_COV) (as of last Saturday)]
 
 !!!**NOTE: REGULAR COVERAGE TESTING IS CURRENTLY DISABLED** !!!
 
@@ -151,7 +151,7 @@ Currently the test category used for Memory testing is `Trilinos_TEST_CATEGORIES
 
 ## Finding information on CDash
 
-There is a wealth of information on CDash about the builds that are done, the version of Trilinos being tested, the commits that are pulled from the last time that build was run, etc.  Below, are some tips on what of information there is and how to find and view it.  As a frame of reference, we will use the CI build `Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI` that runs on `ceerws1113` which can be viewed [here](http://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=3&showfilters=1&filtercombine=and&field1=buildname&compare1=61&value1=Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI&field2=groupname&compare2=61&value2=Continuous&field3=buildstarttime&compare3=84&value3=now).
+There is a wealth of information on CDash about the builds that are done, the version of Trilinos being tested, the commits that are pulled from the last time that build was run, etc.  Below, are some tips on what of information there is and how to find and view it.  As a frame of reference, we will use the CI build `Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI` that runs on `ceerws1113` which can be viewed [here](https://testing.sandia.gov/cdash/index.php?project=Trilinos&filtercount=3&showfilters=1&filtercombine=and&field1=buildname&compare1=61&value1=Linux-GCC-4.9.3-MPI_RELEASE_DEBUG_SHARED_PT_CI&field2=groupname&compare2=61&value2=Continuous&field3=buildstarttime&compare3=84&value3=now).
 
 * **Version of Trilinos being tested (and the prior version):**
   * View Trilinos version natively in CDash:
