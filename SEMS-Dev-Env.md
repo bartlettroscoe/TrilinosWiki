@@ -67,4 +67,4 @@ NOTES:
 
 * A standard pre-push CI Dev Env  based on `load_sems_dev_env.sh` is selected using the source script [load_ci_sems_dev_env.sh](https://github.com/trilinos/Trilinos/blob/develop/cmake/load_ci_sems_dev_env.sh).  See [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing).
 
-* On Mac OSX, this script will load an env but it loads a different env from Linux and Trilinos currently does not build with that env.  This script can really only be used for Linux machines with the SEMS env and `sh` compatible shells (e.g. `bash`, sorry no (t)csh versions are currently available).
+* On Mac OSX, this script will load an env but it loads a different env from Linux and Trilinos currently does not build with that env.  This script can really only be used for Linux machines with the SEMS env and `sh` compatible shells (e.g. `bash`, sorry no `(t)csh` versions are currently available).
