@@ -9,14 +9,14 @@ $ source $TRILINOS_DIR/cmake/load_sems_dev_env.sh
 
 ```
 $ module list
-Currently Loaded Modulefiles:                                                                      
-  1) sems-env                       8) sems-yaml_cpp/0.5.3/base                                    
-  2) sems-python/2.7.9              9) sems-zlib/1.2.8/base                                        
-  3) sems-cmake/3.5.2              10) sems-hdf5/1.8.12/parallel                                   
-  4) sems-git/2.10.1               11) sems-netcdf/4.3.2/parallel                                  
-  5) sems-gcc/4.9.3                12) sems-parmetis/4.0.3/parallel                                
-  6) sems-openmpi/1.6.5            13) sems-superlu/4.3/base                                       
-  7) sems-boost/1.63.0/base                                                                        
+Currently Loaded Modulefiles:
+  1) sems-env                       8) sems-yaml_cpp/0.5.3/base
+  2) sems-python/2.7.9              9) sems-zlib/1.2.8/base
+  3) sems-cmake/3.5.2              10) sems-hdf5/1.8.12/parallel
+  4) sems-git/2.10.1               11) sems-netcdf/4.3.2/parallel
+  5) sems-gcc/4.8.4                12) sems-parmetis/4.0.3/parallel
+  6) sems-openmpi/1.6.5            13) sems-superlu/4.3/base
+  7) sems-boost/1.63.0/base
 ```
 
 (NOTE: Actual modules and versions may be different for the current version of Trilinos.)
@@ -50,7 +50,7 @@ NOTES:
 
 * The Trilinos CMake configure is set up to look for the env var `TRILINOS_SEMS_DEV_ENV_LOADED` that is set by the `load_sems_dev_env.sh` script.  If it finds it, then it will automatically include the file [SEMSDevEnv.cmake](https://github.com/trilinos/Trilinos/blob/develop/cmake/std/sems/SEMSDevEnv.cmake) which then reads in all of the information from the env to set the compilers, MPI implementation and the location of the various TPLs.  In this case, it prints to the CMake output something like:
   ```
-  -- SEMS: Env var TRILINOS_SEMS_DEV_ENV_LOADED={sems-gcc/4.9.3 sems-openmpi/1.6.5 sems-cmake/3.5.2} => Allowing load of SEMS Build Env by default!
+  -- SEMS: Env var TRILINOS_SEMS_DEV_ENV_LOADED={sems-gcc/4.8.4 sems-openmpi/1.6.5 sems-cmake/3.5.2} => Allowing load of SEMS Build Env by default!
   -- Trilinos_USE_BUILD_ENV='SEMS'
   -- SEMS: Loading SEMSDevEnv.cmake to set compilers and TPL paths (To skip, set -DTrilinos_USE_BUILD_ENV=) ...
   ```
