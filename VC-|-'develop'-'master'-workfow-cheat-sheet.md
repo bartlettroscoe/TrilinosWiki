@@ -18,6 +18,12 @@ Once on local 'develop' tracking branch, then just do the [centralized workflow]
 
 See more details [here](VC-%7C-'develop'-'master'-workflow).
 
+Also, to avoid committing to the 'master' branch accidentally, it is wise to delete it with:
+
+```
+[(develop)]$ git branch -d master
+```
+
 **WARNING:** Don't make the following mistake:
 
 ```
