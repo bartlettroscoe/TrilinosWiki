@@ -62,6 +62,8 @@ less ctest.out               # View ctest output/failures
 ctest -j<N> -R <test-name>   # Reproduce failing test(s)
 ```
 
+(**Warning:** loading the SEMS env with `source ../cmake/load_ci_sems_dev_env.sh` will wipe out your current modules so you might want to open a new bash shell before loading it.)
+
 Many other use cases are also supported.  Some detailed documentation on the checkin-test.py script can be obtained using [checkin-test.py --help](https://tribits.org/doc/TribitsDevelopersGuide.html#checkin-test-py-help).
 
 ## NOTES
