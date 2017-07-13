@@ -1,3 +1,5 @@
+## Overview
+
 In order to maintain the stability of [Primary Tested](http://trac.trilinos.org/wiki/TribitsLifecycleModelOverview#test_categories) packages and code on the 'develop' branch of Trilinos, the checkin-test.py script should always be used to test code before any push that changes source code.  A standard environment for running the pre-push CI tests has been set up based on the [SEMS Development Environment](https://github.com/trilinos/Trilinos/wiki/SEMS-Dev-Env) encapsulated in the script [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/blob/develop/cmake/std/sems/checkin-test-sems.sh).  This script makes it easy to run on any machine that has the SEMS Dev Env mounted.  To set up to use this script to test and push changes to Trilinos, do:
 
 ```
@@ -17,6 +19,8 @@ cd Trilinos/CHECKIN/
 ```
 
 (see default options in [local-checkin-test-defaults.py](https://github.com/trilinos/Trilinos/wiki/Policies-|-Safe-Checkin-Testing#local-checkin-test-defaults.py)).  That will automatically figure out what packages are changed and will enable those packages and all of their downstream packages and [BASIC](https://tribits.org/doc/TribitsDevelopersGuide.html#test-test-category) tests.  Then if everything passes, it will rebase the commits on top of `origin/develop`, amend the top commit message with the test results summary, and push the commits (i.e. it implements the [simple centralized workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow) by default).
+
+## Other workflows
 
 If one is nervous testing and pushing in one shot, then one can break this up into two commands with:
 
@@ -44,7 +48,7 @@ One can also run any individual step by replacing `--do-all` and `--local-do-all
 
 If the configure, build or any tests fail, then one can easily reproduce them just like for any regular build of Trilinos by sourcing the script [load_ci_sems_dev_env.sh](https://github.com/trilinos/Trilinos/wiki/SEMS-Dev-Env#load_ci_sems_dev_env.sh) and doing the following (in an `sh` compatible shell, **not (t)csh**):
 
-<a name="manual_reproduce_bash"/>
+## Reproducing failures manually
 
 ```
 cd Trilinos/CHECKIN/
@@ -60,7 +64,7 @@ ctest -j<N> -R <test-name>   # Reproduce failing test(s)
 
 Many other use cases are also supported.  Some detailed documentation on the checkin-test.py script can be obtained using [checkin-test.py --help](https://tribits.org/doc/TribitsDevelopersGuide.html#checkin-test-py-help).
 
-NOTES:
+## NOTES
 
 <a name="ssh-vs-https"/>
 
