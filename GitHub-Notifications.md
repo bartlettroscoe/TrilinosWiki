@@ -11,4 +11,4 @@ However, these resources do not help with a problem we commonly experience with 
 
 If you suspect that your account is throttled:
 1. Go to [https://github.com/notifications](https://github.com/notifications) and check if there are notification listed that are not in your email.
-2. If are missing some notifications, go to [https://github.com/contact](https://github.com/contact) and submit a request to have your account unflagged.
+2. If you are missing some notifications, go to [https://github.com/contact](https://github.com/contact) and submit a request to have your account unflagged.
