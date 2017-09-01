@@ -9,6 +9,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[New Issue Quick Ref](https://github.com/trilinos/Trilinos/wiki/New-Issue-Cheat-Sheet)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Software Quality Plan](https://github.com/trilinos/Trilinos/wiki/Software-Quality-Plan)  
 [Tools](https://github.com/trilinos/Trilinos/wiki/TOOLS)  
+&nbsp;&nbsp;&nbsp;&nbsp;[GitHub Notifications](https://github.com/trilinos/Trilinos/wiki/GitHub-Notifications)  
 &nbsp;&nbsp;&nbsp;&nbsp;[git](https://github.com/trilinos/Trilinos/wiki/Tools--%7C-Git)  
 &nbsp;&nbsp;&nbsp;&nbsp;[CMake](https://github.com/trilinos/Trilinos/wiki/Tools-%7C--CMake)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Doxygen](https://github.com/trilinos/Trilinos/wiki/Tools-%7C-Doxygen)  
@@ -25,4 +26,3 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Test Harness](https://github.com/trilinos/Trilinos/wiki/Policies--%7C-Testing)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Pre-push (Checkin) Testing](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Remote pull/test/push](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push)   
-
