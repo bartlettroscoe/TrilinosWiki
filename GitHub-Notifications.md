@@ -1,8 +1,8 @@
 ### Basic Notifications Help
 GitHub provides a variety of ways to control what information you receive from repository activities. There is substantial documentation on GitHub.com.  For example, these two articles are good references:
 
-- [https://help.github.com/articles/managing-notifications](https://help.github.com/articles/managing-notifications)
 - [https://help.github.com/articles/about-notifications](https://help.github.com/articles/about-notifications)
+- [https://help.github.com/articles/managing-notifications](https://help.github.com/articles/managing-notifications)
 
 You can control your own notification setting here: [https://github.com/settings/notifications](https://github.com/settings/notifications)
 
