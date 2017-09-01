@@ -10,5 +10,5 @@ You can control your own notification setting here: [https://github.com/settings
 However, these resources do not help with a problem we commonly experience with GitHub notifications: mysterious missing notifications.  From time to time, some fraction of your notifications may not get sent to your email address. This may happen if your email system stops responding for a while and then GitHub messages bounce.  GitHub will flag your account and some fraction of messages will not get through.  
 
 If you suspect that your account is throttled:
-1. Go to [https://github.com/notifications](https://github.com/notifications) and check if there are notification listed that are not in your email.
+1. Go to https://github.com/notifications (or https://github.com/notifications/participating) and check if there are notification listed that are not in your email.
 2. If you are missing some notifications, go to [https://github.com/contact](https://github.com/contact) and submit a request to have your account unflagged.
