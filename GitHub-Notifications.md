@@ -15,6 +15,6 @@ If you suspect that your account is throttled:
 
 ### Alternatives to email notifications
 
-Issues can also be monitored directly from a browser from the `Notifications` [page](https://github.com/notifications), where you can see a summary of updates.
+Issues can also be monitored directly from a browser from the `Notifications` [page](https://github.com/notifications), where you can see a summary of updates. You can stop receiving notifications for any issue by unsubscribing from it by clicking the volume sound symbol (similar to 🔊).
 
 The browser extension `Notifier for Github` accesses the `Notifications` page to show desktop alerts when there are updates to issues that you are monitoring.
