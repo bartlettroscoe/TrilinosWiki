@@ -74,7 +74,7 @@ Many other use cases are also supported.  Some detailed documentation on the che
 
 <a name="local-checkin-test-defaults.py"/>
 
-* **[local-checkin-test-defaults.py]** After the first time `checkin-test-sems.sh` is run, optionally edit the file `local-checkin-test-defaults.py` for your machine (see comments inside of the script [`checkin-test-sems.sh`](https://github.com/trilinos/Trilinos/blob/develop/cmake/std/sems/checkin-test-sems.sh) itself).
+* **[local-checkin-test-defaults.py]** After the first time `checkin-test-sems.sh` is run, optionally edit the file `local-checkin-test-defaults.py` to adjust defualt options like `-j<N>` to better match your machine (see comments inside of the script [`checkin-test-sems.sh`](https://github.com/trilinos/Trilinos/blob/develop/cmake/std/sems/checkin-test-sems.sh) itself for how to adjust these default options).
 
 * The `checkin-test-sems.sh` script, by default, runs a single build called `MPI_RELEASE_DEBUG_SHARED_PT` (see CMake options in `MPI_RELEASE_DEBUG_SHARED_PT/do-configure.base`) with the env defined by the source script [load_ci_sems_dev_env.sh](https://github.com/trilinos/Trilinos/blob/develop/cmake/load_ci_sems_dev_env.sh).  This is a build designed to best protect developers and users of Trilinos.  This build allows the enable of any Primary Tested (PT) packages and enables several TPLs provided by the SEMS env (see `Final set of enabled TPLs` in `MPI_RELEASE_DEBUG_SHARED_PT/configure.out`).
 
