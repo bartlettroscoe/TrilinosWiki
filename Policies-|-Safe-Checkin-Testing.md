@@ -78,8 +78,9 @@ Many other use cases are also supported.  Some detailed documentation on the che
 
 * The `checkin-test-sems.sh` script, by default, runs a single build called `MPI_RELEASE_DEBUG_SHARED_PT` (see CMake options in `MPI_RELEASE_DEBUG_SHARED_PT/do-configure.base`) with the env defined by the source script [load_ci_sems_dev_env.sh](https://github.com/trilinos/Trilinos/blob/develop/cmake/load_ci_sems_dev_env.sh).  This is a build designed to best protect developers and users of Trilinos.  This build allows the enable of any Primary Tested (PT) packages and enables several TPLs provided by the SEMS env (see `Final set of enabled TPLs` in `MPI_RELEASE_DEBUG_SHARED_PT/configure.out`).
 
-* The standard pre-push CI build is currently chosen to be the Sandia Linux RHEL 6 or 7 COE with the SEMS env.  It is recommended to Trilinos from one of these machines, or ask someone else with access to one of these machines to push for your.  (Please contact trilinos-framework at software.sandia.gov if you do not have access and time on one of these systems.  Most Sandia staff can be given lab-support systems for this purpose.).
-* One can do development on any machine with any env one wishes and then use a remote SNL Linux RHEL 6 or 7 machine with the SEMS env to do a [remote pull, test, and push](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push) of the commits.
+* The standard pre-push CI build env is currently chosen to be the Sandia Linux RHEL 6 or 7 COE with the SEMS env.  It is recommended that Trilinos developers test and push from one of these machines, or ask someone else with access to one of these machines to push for you.  (Please contact trilinos-framework at software.sandia.gov if you do not have access and time on one of these systems.  Most Sandia staff can be given lab-support systems for this purpose.).
+
+* One can do development on any machine with any env one wishes and then use a remote SNL Linux RHEL 6 or 7 machine with the SEMS env to do a [remote pull, test, and push](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push) of the commits.  (Or, one can just manually move the branch from the local repo to an SNL RHEL 6 or 7 machine and run the checkin-test-sems.sh script from there.)
 
 <a name="raw_checkin_test_py"/>
 
