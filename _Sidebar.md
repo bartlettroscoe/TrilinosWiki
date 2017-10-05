@@ -1,6 +1,6 @@
 <!-- NOTE: This sidebar is using two spaces after each line to force a newline.  Then we use four HTML spaces to indent.  This allows us to avoid using list bullets which take up valuable horizontal space.  The end result is a very compact sidebar. -->
 
-[Trilinos Developer Home](https://github.com/trilinos/Trilinos/wiki)  
+[Home](https://github.com/trilinos/Trilinos/wiki)  
 [Policies](https://github.com/trilinos/Trilinos/wiki/POLICIES)  
 &nbsp;&nbsp;&nbsp;&nbsp;[New Developers](https://github.com/trilinos/Trilinos/wiki/New-Trilinos-Developers)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Productivity++](https://github.com/trilinos/Trilinos/wiki/Productivity---Initiative)  
