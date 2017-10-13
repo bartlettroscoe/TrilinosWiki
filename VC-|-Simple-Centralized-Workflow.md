@@ -11,7 +11,7 @@ Another description is the [“Simple Centralized CI Workflow”](https://docs.g
 
 | Step                                          | Git Commands |
 | ---                                           | --- |
-| **Get latest updates from the central repo:** | `$ git pull --rebase` (from `origin/<branch>`) |
+| **Get latest updates from the central repo:** | `$ git pull --rebase` (i.e. from`origin/<branch>`) |
 | **Make local changes and create commits:**    | `$ emacs <files>`   (or other editor) |
 |                                               | `$ git commit -a` |
 | **Build and test:**                           | `cd <build-dir>; make ; ctest` |
@@ -20,7 +20,7 @@ Another description is the [“Simple Centralized CI Workflow”](https://docs.g
 |                                               | `$ git log --name-status @{u}..HEAD` |
 | **Final cleanup (optional)**                  | `$ git rebase -i @{u}` |
 | **Test changes locally:**                     | `$ git pull` (from `origin/<branch>`) |
-|                                               | ... Test changes ( using checkin-test.py) ... |
+|                                               | ... Test changes (i.e. using checkin-test-sems.sh) ... |
 | **Push changes to central repo:**             | `$ git pull --rebase` (from `origin/<branch>`) |
 |                                               | `$ git push`  (to `origin/<branch>`) |
 
