@@ -22,6 +22,20 @@ cd Trilinos/CHECKIN/
 
 ## Other workflows
 
+If one is merging and pull-request branch `<some-branch>` from the GitHub fork account `<some-github-id>`, then one can merge the branch locally and run with `--no-rebase` with:
+
+```
+git checkout develop
+git pull
+git remote add <some-github-id> git@github:<some-github-id>/Trilinos.git
+git fetch <some-github-id>
+git merge --no-ff <some-gitub-id>/<some-branch>
+cd CHECKIN/
+./checkin-test-sems.sh --do-all --no-rebase --push
+```
+
+That will void a rebase and leave the merge commit (which will be amended with the test results).  Once the commits are pushed to the 'develop' branch, GitHub will automatically close the associated pull-request issue.
+
 If one is nervous testing and pushing in one shot, then one can break this up into two commands with:
 
 ```
