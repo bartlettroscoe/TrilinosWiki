@@ -14,7 +14,7 @@ See the [Trilinos Issue Management Policy](https://github.com/trilinos/Trilinos/
 
     (Also see the "help wanted" in the "Assign the Issue" item below.)
 
-2. **Mention Associated Teams and Developers**: Adding a GitHub mention for package teams and developers will alert the right people when a new issue is filed.
+2. **Mention Associated Teams and Developers**: Adding a GitHub mention for package teams and developers will alert the right people when a new issue is filed.  For example, for Teuchos issues, use `@trilinos/teuchos`.  For Tpetra issues, use `@trilinos/tpetra`, etc.  To mention specific people, use `@<user-github-id>` (e.g. `@maheroux`).
 
 3. **Assign the Issue**: Assigning an issue insures that someone feels ownership of the issue. If no developer appears to have current or future capacity to address the issue, the `help wanted` label should be applied to the issue. *Issues tied to important deliverables to be completed during the current and next calendar quarter should have an assignee listed (or the `help wanted` label applied) to clearly identify staffing issues.* See also "Close the Issue if it will never be worked" above.
 
