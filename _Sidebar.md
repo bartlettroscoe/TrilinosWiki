@@ -7,7 +7,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Support Policy](https://github.com/trilinos/Trilinos/wiki/Trilinos-Support-Policy)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Test Dashboard Policy](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Test-Dashboard-Policy)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Testing Policy](https://github.com/trilinos/Trilinos/wiki/Trilinos-Testing-Policy)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Test Dashboard Policy](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Test-Dashboard-Policy)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Managing Issues](https://github.com/trilinos/Trilinos/wiki/Managing-Trilinos-Project-Issues)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[New Issue Quick Ref](https://github.com/trilinos/Trilinos/wiki/New-Issue-Cheat-Sheet)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Software Quality Plan](https://github.com/trilinos/Trilinos/wiki/Software-Quality-Plan)  
