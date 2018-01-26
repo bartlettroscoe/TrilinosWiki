@@ -16,7 +16,7 @@
 
 ## <a name="overview"></a>Overview
 
-The Trilinos Project uses the [CDash](https://www.cdash.org) tool to host its [testing dashboard](https://testing.sandia.gov/cdash/index.php?project=Trilinos). The dashboard is divided into a number of _tracks_. Each track has its own policies associated with adding a build to the track, keeping a build on the track, and what expectations developers and users can have for the builds on the track. While not all of these policies have been implemented, and not all of the expectations have yet been realized, below we discuss the target policies and expectations for builds on each track.
+The Trilinos Project uses the [CDash](https://www.cdash.org) tool to host its [testing dashboard](https://testing.sandia.gov/cdash/index.php?project=Trilinos). The dashboard is divided into a number of _tracks_. Each track has its own policies associated with adding a build to the track, keeping a build on the track, and what can be expected with regards to the builds on the track. While not all of these policies have been implemented, and not all of the expectations have yet been realized, below we discuss the target policies and expectations for builds on each track.
 
 ## <a name="clean-track"></a>Clean Track
 
