@@ -58,6 +58,8 @@ For Nightly Track builds of general interest to Trilinos, it is the responsibili
 
 In addition to the expectations stated in the above sections on adding and maintaining builds, developers who push changes that break Nightly Track builds whose commits are subsequently backed out can expect to have some way in which they can test their modified changes on the machine(s) that the failures occurred on. This might mean getting help to run the actual test from the Trilinos Framework team or applicable Customer or package team, but it could also mean being given access to the platform in some way with support for basic questions. Therefore, anytime a Nightly Track build is proposed, there is the expectation that if the build is added to the Nightly Track, Trilinos developers will have direct or indirect access to hardware where failures can be reproduced and dealt with.
 
+Finally, if a Nightly Track build decreases in importance, the expectation is that the build maintainer will demote the build to the Specialized Track, or remove it from the dashboard when appropriate.
+
 ## <a name="broken-nightly"></a>Broken Nightly Track
 
 The Broken Nightly track is a track on the dashboard where builds that have failed for two consecutive nights on the Nightly Track are moved. (The Broken Nightly Track uses the same policy for determining which days count for failures as the Nightly Track.) Once a build has been moved to the Broken Nightly track, it no longer is considered in the develop to master promotion decision. However, the maintainers of a Broken Nightly track build still have the authority to back out changes that caused the failures to their builds.  
@@ -72,28 +74,37 @@ A build can fail on the Broken Nightly Track for up to 6 consecutive days, at wh
 
 ### Expectations
 
+It is expected that few builds will be moved to the Broken Nightly Track, and that builds that are moved will be returned to the Nightly Track quickly. Nightly Track qualification may be reviewed for builds that frequently fall to the Nightly Broken Track.
 
 ## <a name="specialized-track"></a>Specialized Track
 
+The Specialized Track contains builds that are either of narrower interest to Trilinos developers and customers, or are in the process of being cleaned up for eventual promotion to the Nightly or Clean Track. Maintainers of Specialized Track builds do not have the authority to back out changes made by other developers to stabilize their build.
+
 ### Adding a Build
 
-
+Any Trilinos developer may submit a build to the Specialized Track. Permission is not required to add a build to this track.
 
 ### Maintaining a Build
 
+Although there are no specific stability requirements for the Specialized Track, if a build is failing chronically in very serious ways, the Trilinos Framework team may strongly suggest that the build be moved to the experimental track or discontinued.
 
 ### Expectations
+
+The Specialized Track can be used for builds of any purpose, including just keeping an eye on the status of a porting effort and monitoring known failures. These efforts are generally not allowed on the Clean or Nightly Tracks. However, there is still an expectation that the builds on the Specialized Track be removed when they are no longer relevant. 
 
 ## <a name="experimental-track"></a>Experimental Track
 
 ### Adding a Build
 
-
+Any Trilinos developer may submit a build to the Experimental Track. Permission is not required to add a build to this track.
 
 ### Maintaining a Build
 
+Although there are no specific stability requirements for the Experimental Track, if a build is no longer relevant, it should be removed to avoid wasting computing resources and bloating the database.
 
 ### Expectations
+
+There are no expectations for Experimental Track builds other than removing builds that are no longer relevant.
 
 ## <a name="pull-request-track"></a>Pull-request Track
 
