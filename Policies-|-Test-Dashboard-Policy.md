@@ -60,14 +60,18 @@ In addition to the expectations stated in the above sections on adding and maint
 
 ## <a name="broken-nightly"></a>Broken Nightly Track
 
+The Broken Nightly track is a track on the dashboard where builds that have failed for two consecutive nights on the Nightly Track are moved. (The Broken Nightly Track uses the same policy for determining which days count for failures as the Nightly Track.) Once a build has been moved to the Broken Nightly track, it no longer is considered in the develop to master promotion decision. However, the maintainers of a Broken Nightly track build still have the authority to back out changes that caused the failures to their builds.  
+
 ### Adding a Build
 
-
+Any member of the Trilinos Framework team can move a build to the Broken Nightly track after 2 consecutive failures on the Nightly Track (provided the failures are not completely different - in other words, the first failure was resolved, and another failure injected that day). A comment should be added to the GitHub issue(s) associated with the failures when the build is moved to the Broken Nightly Track.
 
 ### Maintaining a Build
 
+A build can fail on the Broken Nightly Track for up to 6 consecutive days, at which point Trilinos Framework staff can move the build to the Specialized Track. If on any day the errors are completely different than those from the previous day, or there are no failures, the six day clock resets. A comment should be added to the GitHub issue(s) associated with the failures when the build is moved to the Specialized Track. If a build on the Broken Nightly Track is clean for two consecutive days (no configure, build, or test failures), it can be moved back to the Nightly Track. The maintainers of the build can do this, or a request can be made to the Trilinos Framework team to do this.
 
 ### Expectations
+
 
 ## <a name="specialized-track"></a>Specialized Track
 
