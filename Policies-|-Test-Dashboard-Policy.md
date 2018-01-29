@@ -4,6 +4,8 @@
 
 [Nightly Track](#nightly-track)
 
+[Broken Nightly Track](#broken-nightly)
+
 [Specialized Track](#specialized-track)
 
 [Experimental Track](#experimental-track)
@@ -43,6 +45,24 @@ The Nightly Track is a set of builds that the Trilinos Project has agreed to kee
 To request the addition or modification of a Nightly Track build, contact the Trilinos Framework Product Leader. If the build is of broad importance, the Trilinos Framework Team may assist in the addition of the build as resources permit, if the build is of narrower interest, but is accepted for Nightly Track candidacy, the customer(s) requesting the build will be responsible for following the process of adding the build to the Nightly Track.
 
 The process for adding a Nightly Track build involves first creating a Specialized Track build. Once the Specialized Track build has run for two consecutive days without any configure, build, or test errors, it can be moved to the Nightly Track. Once on the Nightly Track, it must be maintained as described below.
+
+### Maintaining a Build
+
+After one or more failures occurs on a Nightly Track build, the commits leading to the failures should be backed out before the next Nightly Track build is run. If there was no attempt to back out the changes that led to the failures and the build fails a second time for any of the same reasons as the first time, the Trilinos Framework team will move the failing Nightly track build to the Broken Nightly track. To document that an attempt was made to back out the change, a GitHub Issue should be filed. If the Trilinos Framework team sees a second consecutive nightly failure for a build, they will first look for a GitHub Issue for the failure to see if an attempt was made. For example, it would be possible (but unlikely) that someone tried to issue a pull request to back out the change, but another failure prevented the build passing the pull-request testing. Also, it is possible that a commit was reverted in an attempt to fix the failure, but the reverted commit did not fix some or all of the failures. Filing a GitHub issue will also make it clear that the failure is being looked at in case someone else is considering backing out the change. Beginning the first day the build runs on the Broken Nightly track, the build will not be considered as part of the develop to master branch promotion process.
+
+For Nightly Track builds of general interest to Trilinos, it is the responsibility of the Trilinos Framework team to back out changes that cause failures. For customer or package-specific builds, it is the responsibility of the interested party. However, any Trilinos developer is authorized to back out a commit that causes a failure on any Nightly Track build.
+
+**Note:** For the purpose of identifying the "first" and "second" Nightly Track failure dates, only Sandia business days falling Monday-Thursday will be considered. In this context, builds run between Sunday night and Monday are considered Monday builds, as that is when developers would see the results. While other days are not counted in the above policy, developers should still try to revert changes causing Nightly Track failures at their earliest opportunity.
+
+### Expectations
+
+In addition to the expectations stated in the above sections on adding and maintaining builds, developers who push changes that break Nightly Track builds whose commits are subsequently backed out can expect to have some way in which they can test their modified changes on the machine(s) that the failures occurred on. This might mean getting help to run the actual test from the Trilinos Framework team or applicable Customer or package team, but it could also mean being given access to the platform in some way with support for basic questions. Therefore, anytime a Nightly Track build is proposed, there is the expectation that if the build is added to the Nightly Track, Trilinos developers will have direct or indirect access to hardware where failures can be reproduced and dealt with.
+
+## <a name="broken-nightly"></a>Broken Nightly Track
+
+### Adding a Build
+
+
 
 ### Maintaining a Build
 
