@@ -18,7 +18,7 @@
 
 ## <a name="overview"></a>Overview
 
-The Trilinos Project uses the [CDash](https://www.cdash.org) tool to host its [testing dashboard](https://testing.sandia.gov/cdash/index.php?project=Trilinos). The dashboard is divided into a number of _groups_. Sometimes developers refer to groups as "tracks". Tracks is the term used by CTest, while group is used by CDash. Each group has its own policies associated with adding a build to the group, keeping a build on the group, and what can be expected with regards to the builds on the group. While not all of these policies have been implemented, and not all of the expectations have yet been realized, below we discuss the target policies and expectations for builds on each group.
+The Trilinos Project uses the [CDash](https://www.cdash.org) tool to host its [testing dashboard](https://testing.sandia.gov/cdash/index.php?project=Trilinos). The dashboard is divided into a number of _groups_. Sometimes developers refer to groups as "tracks". Track is the term used by CTest, while group is used by CDash. Each group has its own policies associated with adding a build to the group, keeping a build on the group, and what can be expected with regards to the builds on the group. While not all of these policies have been implemented, and not all of the expectations have yet been realized, below we discuss the target policies and expectations for builds on each group.
 
 ## <a name="clean-group"></a>Clean Group
 
