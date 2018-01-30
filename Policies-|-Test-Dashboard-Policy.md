@@ -22,7 +22,7 @@ The Trilinos Project uses the [CDash](https://www.cdash.org) tool to host its [t
 
 ## <a name="clean-track"></a>Clean Track
 
-The Clean Track provides the highest level of stability of any of the Trilinos dashboard tracks. The Clean Track builds correspond to the builds in the Pull-request Testing track builds. Clean Track builds are of very high interest to a wide variety of stakeholders.
+The Clean Track provides the highest level of stability of any of the Trilinos dashboard tracks. The Clean Track builds correspond to the builds in the Pull-request Track. Clean Track builds are of very high interest to a wide variety of stakeholders.
 
 ### Adding a Build
 
@@ -108,27 +108,40 @@ There are no expectations for Experimental Track builds other than removing buil
 
 ## <a name="pull-request-track"></a>Pull-request Track
 
+The Pull-request Track contains builds that correspond to specific pull requests issued against the develop branch of the Trilinos GitHub repository. The configurations for the builds are identical to the configurations for the builds on the Clean Track (this is a target currently, not a reality). The name of a Pull-request Track build contains the issue number of the pull request being tested.
+
+
 ### Adding a Build
 
-
+A Pull-request Track build corresponding to each of the Clean Track builds is created when a pull-request is submitted against the develop branch of Trilinos, the initial inspection requirement for the pull-request is satisfied, and the branch containing the pull-request can be merged cleanly onto the current state of the develop branch.
 
 ### Maintaining a Build
 
+The Pull-request Track build configurations change only when Clean Track build configurations change.
 
 ### Expectations
+
+When all of the Pull-request builds pass and the pull request is merged into the develop branch, the changes that are merged should very rarely cause the Clean Track builds to fail. One example where it is possible a Clean Track build would fail is if two pull-requests are being tested simultaneously against the same version of develop, and both pass when tested individually but, even though no merge conflicts occur when applying the pull-requests, the combination of both pull-requests being applied causes a failure.
 
 ## <a name="continuous-track"></a>Continuous Track
 
+Continuous Track builds run once in the morning, then after every change that is applied to the repository. If, while a Continuous Track build is running, more than one change is applied to the repository, all changes applied since the last continuous build will be tested together in the next continuous run. Currently the builds on the Continuous Track closely resemble Clean Track builds. The role of the Continuous Track builds may evolve to include builds using configurations identical to all of the Clean Track builds, or may simply be updated to be identical to the Clean Track builds the Continuous Track builds currently resemble.
+
 ### Adding a Build
 
-
+To request the addition or modification of a Clean Track build, contact the Trilinos Framework Product Leader.
 
 ### Maintaining a Build
 
+Failures in Continuous Track builds are to be corrected immediately by backing out the commit that caused the failure. Any Trilinos developer is authorized to submit a pull request that backs out the offending commit(s) that caused a failure to a Continuous Track build. Once the Continuous Track test configurations are made identical to Clean Track (and therefore Pull-request Track) builds, and Pull-request testing is made mandatory, Continuous Track failures should be very rare, as pull request testing will fail in all cases that Continous Track testing fails, except for a few corner cases.
 
 ### Expectations
 
+Customers can expect Continuous Track failures will be of very short duration (less than 1/2 day). Developers can expect that if a commit causes a failure to the Continuous Track, that it will be backed out and they will have time to correct and resubmit the commit.
+
 ## <a name="release-tracks"></a>Release Tracks
+
+
 
 ### Adding a Build
 
