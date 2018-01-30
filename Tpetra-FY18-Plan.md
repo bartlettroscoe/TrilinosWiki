@@ -33,3 +33,11 @@ Determine node type from compile-time option rather than template parameter
 Includes defining offset_type to be Kokkos::size_type  
 ### Best practices documentation, User's guide
 DELIVERY:  FY18 Q4; POC:  Fuller  
+### As time / staffing / funding allows:  
+* Distributor / Import / Export design and performance  
+* Use KokkosKernels interfaces to on-node TPLs 
+* Create Tpetra::initialize, Tpetra::finalize to enable correct handling of Kokkos, MPI 
+* Matrix-Matrix multiplication:  enable separate symbolic / numeric usage
+* Remove local solves from Tpetra 
+* Consolidate and make consistent use of arithmetic and communication Traits
+
