@@ -141,12 +141,16 @@ Customers can expect Continuous Track failures will be of very short duration (l
 
 ## <a name="release-tracks"></a>Release Tracks
 
-
+The Release Tracks are used for builds that test Trilinos release branches. There is one release track corresponding to each major Trilinos release. Release testing is done for the most recent release, and soon after a release, for the previous release as well. The current Release Track build configurations include MPI and serial static library builds, and an MPI shared library build for the lowest supported version of GCC.
 
 ### Adding a Build
 
+To request the addition or modification of a Clean Track build, contact the Trilinos Framework Product Leader.
 
 ### Maintaining a Build
 
+Failures in Release Track builds are to be corrected immediately by backing out the commit that caused the failure. Any Trilinos developer is authorized to back out the offending commit(s) that caused a failure to a Release Track build.
 
 ### Expectations
+
+Release Track builds should rarely fail, as few changes are made to Trilinos release branches, and these changes do not include additional features.
