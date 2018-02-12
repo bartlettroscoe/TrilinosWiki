@@ -3,6 +3,6 @@
 
 ## Interface changes and Deprecation
 [Changes to template parameters](https://github.com/trilinos/Trilinos/wiki/Deprecation1)  
-[Removal of DynamicProfile graph construction](https://github.com/trilinos/Trilinos/wiki/Deprecation2)  
+[Removal of DynamicProfile construction for CrsGraph and CrsMatrix](https://github.com/trilinos/Trilinos/wiki/Deprecation2)  
 
 ## Documentation
