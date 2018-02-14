@@ -1,6 +1,6 @@
 **Table of Contents:**
 * [Overview](#overview)
-* [Transitioning to a develop-master workflow](#transition_develop_master)
+* [Transitioning to a feature-branch/develop/master workflow](#transition_feature_develop_master)
 * [Moving local changes to the 'develop' branch](#move_to_develop)
 
 <a name="overview"/>
@@ -14,10 +14,10 @@ The motivation for the usage of a 'develop' branch and the full set of mechanics
 
 (NOTE: The "bug-fix" workflow elements shown in the above figure are not described below but are described in great detail in the [above reference](https://docs.google.com/document/d/1uVQYI2cmNx09fDkHDA136yqDTqayhxqfvjFiuUue7wo/edit#heading=h.u2ougk1wk7ph).  If things go well, then these "bug fix" commits should almost never be needed.  But in the rare cases these "bug-fix" commits or revert commits are needed/desired, then more experienced Trilinos git developers can help make those changes.)
 
-<a name="transition_develop_master"/>
-# Transitioning to a develop-master workflow
+<a name="transition_feature_develop_master"/>
+# Transitioning to a feature-branch/develop/master workflow
 
-For developers accustomed to the previous single branch Trilinos development model (the [Simple Centralized Workflow](https://github.com/trilinos/Trilinos/wiki/VC-|-Simple-Centralized-Workflow)), the transition to the develop-master workflow is not complicated. In essence, you make changes to the develop branch, rather than the master branch. A few extra details, and commands for doing this are below. These commands will be needed every time the Trilinos repository is cloned.
+For developers accustomed to the previous single branch Trilinos development model (the [Simple Centralized Workflow](https://github.com/trilinos/Trilinos/wiki/VC-|-Simple-Centralized-Workflow)), the transition to the feature-branch/develop/master workflow is not complicated. In essence, you make changes to the feature branch, rather than the develop or master branch. A few extra details, and commands for doing this are below. These commands will be needed every time the Trilinos repository is cloned.
 
 If the local repo is clean (i.e. no local modifications or untracked files), then one just needs to get on a local 'develop' tracking branch.  If the local 'develop' tracking branch has not already been created, then create it using:
 
