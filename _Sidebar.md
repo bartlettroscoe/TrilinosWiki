@@ -18,7 +18,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[GitHub Notifications](https://github.com/trilinos/Trilinos/wiki/GitHub-Notifications)  
 [Version Control](https://github.com/trilinos/Trilinos/wiki/VC-(VERSION-CONTROL))  
 &nbsp;&nbsp;&nbsp;&nbsp;[Initial git setup](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Initial-Git-Setup)  
-&nbsp;&nbsp;&nbsp;&nbsp;['develop'/'master'](https://github.com/trilinos/Trilinos/wiki/VC-%7C-'develop'-'master'-workflow) ([cheatsheet](https://github.com/trilinos/Trilinos/wiki/VC-|-'develop'-'master'-workfow-cheat-sheet))  
+&nbsp;&nbsp;&nbsp;&nbsp;['feature'/'develop'/'master'](https://github.com/trilinos/Trilinos/wiki/VC-%7C-'develop'-'master'-workflow) ([cheatsheet](https://github.com/trilinos/Trilinos/wiki/VC-|-'develop'-'master'-workfow-cheat-sheet))  
 &nbsp;&nbsp;&nbsp;&nbsp;[Simple centralized workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow)  
 [Building](https://github.com/trilinos/Trilinos/wiki/Building)  
 &nbsp;&nbsp;&nbsp;&nbsp;[SEMS Dev Env](https://github.com/trilinos/Trilinos/wiki/SEMS-Dev-Env)  
