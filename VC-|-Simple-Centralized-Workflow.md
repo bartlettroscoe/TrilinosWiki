@@ -2,16 +2,21 @@ No matter what git-related workflow that is being used, developers need to under
 
 ## The simple centralized workflow
 
-The simple centralized workflow (i.e. the git equivalent of SVN) is outlined on the Atlassian page [Git Workflows](https://www.atlassian.com/pt/git/workflows#!workflow-centralized) as the most basic valid git workflow.  On this Atlassian page, it is stated:
+The simple centralized workflow (i.e. the git equivalent of SVN) is outlined on the Atlassian page [Centralized Git Workflows](https://www.atlassian.com/pt/git/workflows#!workflow-centralized) as the most basic valid git workflow.  On this Atlassian page, it is stated:
 
 * “Your team can develop projects in the exact same way as they do with Subversion.”
 * “Before the developer can publish their feature, they need to fetch the updated central commits and rebase their changes on top of them. This is like saying, “I want to add my changes to what everyone else has already done.” The result is a perfectly linear history, just like in traditional SVN workflows”
 
-Another description is the [“Simple Centralized CI Workflow”](https://docs.google.com/document/d/1uVQYI2cmNx09fDkHDA136yqDTqayhxqfvjFiuUue7wo/edit#heading=h.7z34akh7lsvp).  That link gives the summary where `<branch>` is the a local tracking branch which is tracking the remote `origin/<branch>` branch (for example, where the branch `<branch>` is assumed to be 'master' but it could be 'develop' or any other shared remote tracking branch such as a shared topic or feature branch):
+## Trilinos is moving towards a feature branch workflow which builds on top of the centralized workflow as outlines at [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) whith develop as the central branch instead of master.  As stated on that page:
+
+* "Aside from isolating feature development, branches make it possible to discuss changes via pull requests. Once someone completes a feature, they don’t immediately merge it into develop. Instead, they push the feature branch to the central server and file a pull request asking to merge their additions into develop. This gives other developers an opportunity to review the changes before they become a part of the main codebase."
+
+In our case this also facilitates automated testing for each pull request on a number of scenarios that have been deemed important for various reasons.
 
 | Step                                          | Git Commands |
 | ---                                           | --- |
-| **Get latest updates from the central repo:** | `git pull --rebase` (i.e. from`origin/<branch>`) |
+| **Get latest updates from the central repo:** | `git pull --rebase` (i.e. from`origin/develop`) |
+| **Start a topic branch:**                     | `git checkout -b cool-new-feature-name develop |
 | **Make local changes and create commits:**    | `emacs <files>`   (or other editor) |
 |                                               | `git commit -a` |
 | **Build and test:**                           | `cd <build-dir>; make ; ctest` |
@@ -21,14 +26,18 @@ Another description is the [“Simple Centralized CI Workflow”](https://docs.g
 | **Final cleanup (optional)**                  | `git rebase -i @{u}` |
 | **Test changes locally:**                     | `git pull` (from `origin/<branch>`) |
 |                                               | ... Test changes (i.e. using checkin-test-sems.sh) ... |
-| **Push changes to central repo:**             | `git pull --rebase` (from `origin/<branch>`) |
-|                                               | `git push`  (to `origin/<branch>`) |
+| **Push changes to your fork:**                | `git checkout develop`
+|                                               | `git pull --rebase` (from `origin/develop`) |
+|                                               | `git checkout cool-new-feature-name |
+|                                               | `git rebase master`
+|                                               | `git push cool-new-feature-name`  (to your push-url) |
+| **Issue a pull request on the github site:**  | from your_fork:cool-new-feature-name to trilinos:develop |
+| **Request reviews and/or assign someone:**    | |
+| **After Review and testing:**                 | Rebase and Merge the request |
 
 <a name="rebase"/>
 
-The key to keeping a nice linear history is the `--rebase` argument in the `git pull --rebase` commands.  The rebase right before the final `git push` command is often needed to keep a linear history.  Such a rebase is always safe if these commits are created locally and were not shared with other repos or developers (which is the typical SVN workflow depicted above).  The initial `git pull --rebase` is a good idea to avoid lots of merge commits from `origin/<branch>` that clutter up local history.  The optional `git rebase -i @{u}` command is very useful for cleaning up commits (i.e. amending, squashing, rearranging) before finally publishing them (see [Interactive Rebase](https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history)).
-
-NOTE: The [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) script performs all of the steps starting with "Test changes locally" automatically and robustly by default and is the recommended way to push changes to 'develop' branch of Trilinos.
+The key to keeping a nice linear history is the `--rebase` argument in the `git pull --rebase` commands.  Such a rebase is always safe if these commits are created locally and were not shared with other repos or developers (which is the typical SVN workflow depicted above).  Similarly, pull requests to origin/develop can usually be rebased to maintain a linear history in that branch. The initial `git pull --rebase` is a good idea to avoid lots of merge commits from `origin/develop` that clutter up local history.  The optional `git rebase -i @{u}` command is very useful for cleaning up commits (i.e. amending, squashing, rearranging) before finally publishing them (see [Interactive Rebase](https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history)).
 
 <a name="git_rerere"/>
 
@@ -55,6 +64,6 @@ Many beginner developers new to git use a simple git workflow (e.g. where `<bran
 [(<branch>]$ git push   # Pushes messy trivial merge commit to origin/<branch> :-(
 ```
 
-The problem with the above process, is that the later `git pull` creates what is often called a trivial merge commit.  Such trivial merge commits make the git history difficult to look at and follow and the mess up the nice linear history that you get using a tool like Subversion (SVN).  (As a result, many development projects that use git will not even let developers push these trivial commits.  For example, the push hooks for the SIERRA git repos do not allow them.  Also, PETSc does not allow them.)
+The problem with the above process, is that the later `git pull` creates what is often called a trivial merge commit and forces all testing onto the developer.  Such trivial merge commits make the git history difficult to look at and follow and the mess up the nice linear history that you get using a tool like Subversion (SVN).  (As a result, many development projects that use git will not even let developers push these trivial commits.  For example, the push hooks for the SIERRA git repos do not allow them.  Also, PETSc does not allow them.)
 
 Another problem with these trivial merge commits is that GitHub push emails show all of the changed files associated with these trivial merge commits.  This results in getting a bunch of false matches for custom email filters for the GitHub push emails.  For example, many Trilinos developers have an Outlook email filter that only shows emails that contain package names such as "teuchos", "thyra", "kokkos" and "tpetra".  But these people get spammed because of these trivial merge commits involving commits that have nothing to do with these keywords.  Therefore, routinely using trivial merge commits makes these git email filters almost worthless.

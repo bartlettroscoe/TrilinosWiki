@@ -6,7 +6,7 @@
 <a name="overview"/>
 # Overview
 
-The Trilinos project uses a long-lived branch called 'develop' to conduct basic development.  All Trilinos developers directly pull from and push to the shared github 'develop' branch.  Then, the 'master' branch is updated from the 'develop' branch when it passes a specific set of builds for a specific set of packages (the set of packages and builds will evolve over time).  This is depicted in the below figure:
+The Trilinos project uses a long-lived branch called 'develop' to conduct basic development.  All Trilinos developers directly pull from and request pulls to the shared github 'develop' branch.  Then, the 'master' branch is updated from the 'develop' branch when it passes a specific set of builds for a specific set of packages (the set of packages and builds will evolve over time).  This is depicted in the below figure:
 
 ![Trilinos Git 'develop'/'master' workflow](https://github.com/trilinos/trilinos_wiki_images/blob/master/GitDevelopMasterWorkflow.png)
 
@@ -36,22 +36,22 @@ $ cd Trilinos/
 [(develop)]$ 
 ```
 
-Once on the local 'develop' branch which is tracking the remote 'origin/develop' branch, simply use standard `git pull`, `git commit` and `git push` commands. The only difference is these commands are performed while on the 'develop' rather than 'master' branch as part of the [simple centralized workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow).
+Once on the local 'develop' branch which is tracking the remote 'origin/develop' branch, simply create a local branch for your new development. changes from develop or your local feature branch can be freely pushed to your fork on github to share with other developers or to simply preserve the code in case of local failuure. When all is ready to integrate simply issue a pull request on github from your feature branch to trilinos:develop. See [feature branch workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow).
 
-NOTE: The [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) script can be used on the 'develop' branch to robustly push committed modifications.
+NOTE: The [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) script can be used on the 'develop' branch to locally test modifications.
 
-<a name="move_to_develop"/>
-# Move local changes to the 'develop' branch
+<a name="move_to_feature_branch"/>
+# Move local changes to a feature branch
 
-The below process applies only to situations where a Trilinos developer has made changes to the local git repo's 'master' branch and needs to transfer the changes to their local 'develop' branch, where they can be pushed to the github 'develop' branch. This will be common only during the initial transition to the develop-master workflow.
+The below process applies only to situations where a Trilinos developer has made changes to the local git repo's 'master' or 'develop' branch and needs to transfer the changes to their local feature branch, where they can be pushed to their github fork. This will be common only during the initial transition to the feature-branch workflow.
 
 Before getting started, Trilinos developers can optionally set up their local account to use the git usability scripts git-prompt.sh and git-completion.bash and enable git `rerere` as described [here](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Initial-Git-Setup).  The shell scripts will make it obvious what local branch a developer is on and git `rerere` will help with the rebasing and merging commands required to transition local commits.
 
 The below process assumes:
-* Changes to be moved to the 'develop' branch have been committed to the local 'master' branch, but not pushed.
-* All of the local commits to 'master' are to be moved to 'develop'.
+* Changes to be moved to the feature branch have been committed to the local 'master' branch, but not pushed.
+* All of the local commits to 'master' are to be moved to the feature branch.
 
-The process to transition local changes not on the 'develop' branch to the 'develop' branch are:
+The process to transition local changes not on a feature branch to the feature branch are:
 
 **1) Checkout and update the local tracking 'develop' branch**
 
@@ -61,13 +61,20 @@ Next, pull to update 'develop'.
 
 ```
 [(develop)]$ git pull   # from origin/develop
+[(develop)]$ git push   # to your_fork/develop
 [(develop)]$
 ```
 
-**2) Merge changes from the local 'master' branch to the local 'develop' branch**
+And set up a feature branch
+```
+[(develop)]$ git checkout -b new-feature-branch   # from origin/develop
+[(new-feature-branch)]$
+```
+
+**2) Merge changes from the local 'master' or 'develop' branch to the local feature branch**
 
 ```
-[(develop)]$ git merge master   # resolve any merge conflicts
+[(new-feature-branch)]$ git merge master   # resolve any merge conflicts
 ```
 
 **3) Test and push changes**
@@ -76,24 +83,18 @@ At this point, the commits merged from the local 'master' branch should be teste
 
 ```
 ... Test changes ...
-[(develop)]$ git pull --rebase                      # from origin/develop
-[(develop)]$ git push                               # to origin/develop
+[(new-feature-branch)]$ git pull --rebase                      # update origin/develop
+[(new-feature-branch)]$ git rebase origin/develop              # rebase the feature-branch onto origin/develop
+[(new-feature-branch)]$ git push origin new-feature-branch     # to your_fork/new-feature-branch
 ```
 
 NOTE: If git rerere is enabled, then any merge conflicts that have already been resolved will be resolved automatically on the final rebase before the final push.
 
-**4) Reset the local 'master' branch**
+**4) Reset the local 'develop' branch**
 
-If one will later want to go back to the local 'master' branch, then it is a good idea to reset it to the 'origin/master' branch  **after** the locally updated 'master' branch has been merged into the 'develop' branch as described above.  This reset is performed as:
-
-```
-[(develop)]$ git checkout master
-[ (master)]$ git reset --hard origin/master
-```
-
-Then one can go back to the 'develop' branch and continue work there with:
+If one will later want to go back to the local 'develop' branch, then it is a good idea to reset it to the 'origin/develop' branch  **after** the locally updated feature branch has been merged into the 'develop' branch as described above.  This reset is performed as:
 
 ```
-[ (master)]$ git checkout develop
-[(develop)]$
+[(develop)]$ git checkout develop
+[(develop)]$ git pull
 ```

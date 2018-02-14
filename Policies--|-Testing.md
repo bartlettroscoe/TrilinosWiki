@@ -43,7 +43,8 @@ Links to main Trilinos CDash dashboard results and query tools:
 
 The different categories of Trilinos testing are:
 
-+ [Pre-push Continuous Integration Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#pre_push_ci_testing)
++ [Pull-request testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#pull_request_testing)
++ [Deprecated : Pre-push Continuous Integration Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#pre_push_ci_testing)
 + [Post-push Continuous Integration Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#post_push_ci_testing)
 + [Nightly Regression Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#nightly_regression_testing)
 + [Performance Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#performance_testing)
@@ -55,11 +56,17 @@ The different categories of Trilinos testing are:
 
 These different categories of testing are described in more detail below.
 
+<a name="pull_request_testing"/>
+
+***Pull-request testing**: All packages
+
+When a new pull request is issued to the trilinos/Trilinos repository [Trilinos/pulls](https://github.com/trilinos/Trilinos/pulls/) this system will create jobs on a set of sandia machines to build and test using gcc 4.8.4 and gcc 4.9.3 and openmpi 1.8.7. Since these builds are not done on the developers machine they are completed and the results are repoted back to the pull request on github as comments. In the future these will include reference to CDASH lines for each build.
+
 <a name="pre_push_ci_testing"/>
 
-**Pre-push Continuous Integration Testing**: Primary Tested Code [[Checkin test mailing list](https://software.sandia.gov/pipermail/trilinos-checkin-tests/)]
+**Deprecated : Pre-push Continuous Integration Testing**: Primary Tested Code [[Checkin test mailing list](https://software.sandia.gov/pipermail/trilinos-checkin-tests/)]
 
-Before every push to the global Trilinos git repository 'develop' branch, the Trilinos [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) script should be used to test all affected [Primary Tested (PT) Code](http://trac.trilinos.org/wiki/TribitsLifecycleModelOverview#test_categories). The purpose for this type of testing is to a) do a basic smoke test to make sure nothing significant has been broken, and b) provide a consistent basis of comparison across all developers to determine if it is safe to push.
+Previously, before every push to the global Trilinos git repository 'develop' branch, the Trilinos [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) script would be used to test all affected [Primary Tested (PT) Code](http://trac.trilinos.org/wiki/TribitsLifecycleModelOverview#test_categories). The pull request testing system is replacing this functionality as it tests more platorms and can be readily expanded as needed. The purpose for this type of testing is to a) do a basic smoke test to make sure nothing significant has been broken, and b) provide a consistent basis of comparison across all developers to determine if it is safe to push.
 
 The main purpose of this type of testing is to protect other developers so they can continue their development work after pulling changes from the 'develop' branch. The selection of PT packages is done based on usage by important Trilinos customers (see [Trilinos GitHub Issue #410](https://github.com/trilinos/Trilinos/issues/482)).  However, 
 

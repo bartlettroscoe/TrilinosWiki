@@ -14,15 +14,9 @@ Otherwise, do:
 [(develop)]$ 
 ```
  
-Once on local 'develop' tracking branch, then just do the [centralized workflow](VC-%7C-Simple-Centralized-Workflow).
+Once on local 'develop' tracking branch, then just do the [feature branch workflow](VC-%7C-Simple-Centralized-Workflow).
 
 See more details [here](VC-%7C-'develop'-'master'-workflow).
-
-Also, to avoid committing to the 'master' branch accidentally, it is wise to delete it with:
-
-```
-[(develop)]$ git branch -d master
-```
 
 **WARNING:** Don't make the following mistake:
 

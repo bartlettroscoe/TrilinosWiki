@@ -1,6 +1,6 @@
 The Trilinos github repository contains several long-lived branches:
 
-* **develop**: The main development branch that Trilinos developers directly push commits to in order to add new features, fix bugs, etc.
+* **develop**: The main development branch that Trilinos developers issue pull request to in order to add new features, fix bugs, etc.
   * _Who pulls from this branch?_
     * Close collaborators and customers that want to help test (not use) new features as they are being developed
     * Very close collaborators that want to have access to the very latest development version of Trilinos who don't mind dealing with more defects and increased instability

@@ -19,12 +19,13 @@ cd Trilinos/
 
 The basic process is:
 
-1. Create commits on your local machine (on the 'develop' branch or a topic branch)
-2. Push the local branch from the local machine to an intermediate git repo (e.g. your GitHub fork of Trilinos)
-3. Pull and merge your branch from the intermediate git repo to Trilinos git repo 'develop' branch on the remote machine
-4. Run `checkin-test-sems.sh` script on remote machine to test and push your branch to the Trilinos 'develop' branch.
+1. Create commits on your local machine (on a topic branch)
+2. Push the topic branch from the local machine to an intermediate git repo (e.g. your GitHub fork of Trilinos)
+3. Pull and merge your branch from the intermediate git repo to Trilinos git repo topic branch on the remote machine
+4. Run `checkin-test-sems.sh` script on remote machine to test and push your branch to your Trilinos fork topic branch.
+5. Issue a pull request from your fork's topic branch to the trilnos/develop branch
 
-If all goes well, this will automatically merge in your branch and push to the Trilinos 'develop' branch.  If anything fails, it will send you email messages about the failures.  If that happens, you can SSH to `<remote-machine>` and inspect the configure, build, or test failures yourself.
+If all goes well, this will automatically test and inspect your branch and allow a rebase and merge to the Trilinos 'develop' branch.  If anything fails, it will send you email messages about the failures.  If that happens, you can SSH to `<remote-machine>` and inspect the configure, build, or test failures yourself.
 
 The advantages of using this process are:
 
@@ -32,6 +33,7 @@ The advantages of using this process are:
 * As soon as your local commits are pushed to the intermediate git repo from your local machine, you can keep working.  (The checkin-test-sems.sh script will be running on the remote machine in the background.)
 * Your local machine is not loaded down running the full Trilinos CI build before your push.
 * If anything fails on the remote machine, you can quickly examine the failures, rerun the configure, build, or individual tests since these artifacts live in your own directory on the remote machine (see [resolving problems on `<remote-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems)).
+* The pull reqwuest testing will verify your code against other scenarios you might not have expected and allow for review by other developers.
 
 ## Process
 

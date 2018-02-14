@@ -26,10 +26,9 @@ These scripts make using git easier, but are not required.
 **3) Clone Trilinos and get on 'develop' branch:**
 
 ```
-git clone git@github.com/trilinos/Trilinos.git
+git clone -b develop git@github.com:trilinos/Trilinos.git
 cd Trilinos/
-git checkout --track origin/develop
-git branch -d master
+git remote set-url --push origin git@github.com:<username>/Trilinos.git
 ```
 
 (see [develop/master workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-'develop'-'master'-workflow))
