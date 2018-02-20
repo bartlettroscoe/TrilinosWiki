@@ -1,21 +1,21 @@
 **Contents:**
-* [Overview](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#overview)
-* [Process](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#process)
+* [Overview](Local-development-with-remote-pull,-test,-and-push#overview)
+* [Process](Local-development-with-remote-pull,-test,-and-push#process)
 
 <a name="overview"/>
 
 ## Overview
 
-With a little setup and some basic comfort with git workflows involving multiple repositories, you can do development of Trilinos on any machine with any environment you want and then use a different standard Linux COE RHEL 6 machine with the SEMS Env (e.g. any CEE LAN machine at Sandia) to pull, test, and push the changes to the Trilinos GitHub 'develop' branch using the [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) script.  This is a minor variation of the [simple centralized workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow) on the 'develop' branch and does not require any deep understanding of topic branch workflows.
+With a little setup and some basic comfort with git workflows involving multiple repositories, you can do development of Trilinos on any machine with any environment you want and then use a different standard Linux COE RHEL 6 machine with the SEMS Env (e.g. any CEE LAN machine at Sandia) to pull, test, and push the changes to the Trilinos GitHub 'develop' branch using the [checkin-test-sems.sh](Policies-%7C-Safe-Checkin-Testing) script.  This is a minor variation of the [simple centralized workflow](VC-%7C-Simple-Centralized-Workflow) on the 'develop' branch and does not require any deep understanding of topic branch workflows.
 
-After a [one-time initial setup](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup) is performed, you can invoke a remote pull/test/push process using a local script on your local machine as:
+After a [one-time initial setup](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup) is performed, you can invoke a remote pull/test/push process using a local script on your local machine as:
 
 ```
 cd Trilinos/
 ../remote-pull-test-push-<remote-machine>.sh
 ```
 
-(see details [below](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#remote_pull_test_push)).
+(see details [below](Local-development-with-remote-pull%2C-test%2C-and-push#remote_pull_test_push)).
 
 The basic process is:
 
@@ -32,38 +32,38 @@ The advantages of using this process are:
 * You can develop Trilinos on any machine you want but still do a solid pre-push test with the standard CI build to avoid breaking things for other developers and customers.
 * As soon as your local commits are pushed to the intermediate git repo from your local machine, you can keep working.  (The checkin-test-sems.sh script will be running on the remote machine in the background.)
 * Your local machine is not loaded down running the full Trilinos CI build before your push.
-* If anything fails on the remote machine, you can quickly examine the failures, rerun the configure, build, or individual tests since these artifacts live in your own directory on the remote machine (see [resolving problems on `<remote-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems)).
+* If anything fails on the remote machine, you can quickly examine the failures, rerun the configure, build, or individual tests since these artifacts live in your own directory on the remote machine (see [resolving problems on `<remote-machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems)).
 * The pull reqwuest testing will verify your code against other scenarios you might not have expected and allow for review by other developers.
 
 ## Process
 
 **Process Outline:**
 
-* [A) Initial setup on `<remote-machine>` and `<local-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup)
+* [A) Initial setup on `<remote-machine>` and `<local-machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup)
 
-  * [A.1) Set up minimal Git settings for your account on `<remote-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_get_settings_on_remote)
+  * [A.1) Set up minimal Git settings for your account on `<remote-machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_get_settings_on_remote)
 
-  * [A.2) Set up a Trilinos clone and CHECKIN build directory on `<remote machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_trilinos_repo_on_remote)
+  * [A.2) Set up a Trilinos clone and CHECKIN build directory on `<remote machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_trilinos_repo_on_remote)
 
-  * [A.3) Set up local git repo on `<local-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_trilinos_repo_on_local)
+  * [A.3) Set up local git repo on `<local-machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_trilinos_repo_on_local)
 
-  * [A.4) Set up SSH key access from `<local-machine>` to `<remote-machine>` [Optional]](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_ssh_keys)
+  * [A.4) Set up SSH key access from `<local-machine>` to `<remote-machine>` [Optional]](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_ssh_keys)
 
-  * [A.5) Test that remote pull/test/push process setup works](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_test_remote_pull_test_push)
+  * [A.5) Test that remote pull/test/push process setup works](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_test_remote_pull_test_push)
 
-* [B) Local development then remote pull, test, and push](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#local_dev_remote_pull_test_push)
+* [B) Local development then remote pull, test, and push](Local-development-with-remote-pull%2C-test%2C-and-push#local_dev_remote_pull_test_push)
 
-  * [B.1) Do development of Trilinos on `<local-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#local_dev_remote_pull_test_push_develop_on_local)
+  * [B.1) Do development of Trilinos on `<local-machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#local_dev_remote_pull_test_push_develop_on_local)
 
-  * [B.2) Invoke a remote pull/test/push process](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#local_dev_remote_pull_test_push_invoke_remote)
+  * [B.2) Invoke a remote pull/test/push process](Local-development-with-remote-pull%2C-test%2C-and-push#local_dev_remote_pull_test_push_invoke_remote)
 
-* [C) Resolving problems on `<remote-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems)
+* [C) Resolving problems on `<remote-machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems)
 
-  * [C.1) Log onto `<remote-machine>` and reproduce the problem](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems_reproduce_on_remote)
+  * [C.1) Log onto `<remote-machine>` and reproduce the problem](Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems_reproduce_on_remote)
 
-  * [C.2) Add new fixing commits on `<remote-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems_fixing_commits)
+  * [C.2) Add new fixing commits on `<remote-machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems_fixing_commits)
 
-  * [C.3) Run final remote test/push on `<remote-machine>`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems_remote_test_push)
+  * [C.3) Run final remote test/push on `<remote-machine>`](Local-development-with-remote-pull%2C-test%2C-and-push#resolving_problems_remote_test_push)
 
 For these instructions, define the following:
 
@@ -87,7 +87,7 @@ To get started, one needs to do a minimal one-time setup.  Once this setup is co
 
 <a name="initial_setup_get_settings_on_remote"/>
 
-**A.1) Set up [minimal Git settings](https://github.com/trilinos/Trilinos/wiki/VC-|-Initial-Git-Setup#minimal_git_settings) for your account on `<remote-machine>`:**
+**A.1) Set up [minimal Git settings](VC-|-Initial-Git-Setup#minimal_git_settings) for your account on `<remote-machine>`:**
 
 ```
 ssh <remote-machine>
@@ -118,7 +118,7 @@ ln -s ../cmake/std/sems/checkin-test-sems.sh .
 
 NOTES:
 * The access from `<remote-machine>` to the `intermediate-repo` git repo and the GitHub repo must use SSH and must not require an SSH passphrase.  Otherwise, the pulls and pushes on the remote machine will not work because they will require you to type a password (which you can't do from your local machine).
-* You can use a different remote git repo for [`intermediate-repo`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#intermediate_repo) other than your GitHub fork of Trilinos (see [above](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#intermediate_repo)).
+* You can use a different remote git repo for [`intermediate-repo`](Local-development-with-remote-pull,-test,-and-push#intermediate_repo) other than your GitHub fork of Trilinos (see [above](Local-development-with-remote-pull,-test,-and-push#intermediate_repo)).
 * Other special considerations and tips for setting up a remote pull/test/push server using a Sandia CEE LAN machine are given at [Development and Testing on CEE LAN Machines](https://snl-wiki.sandia.gov/display/TRIL/Development+and+Testing+on+CEE+LAN+machines).
 
 Test that remote `intermediate-repo` is set up correctly and is accessible:
@@ -140,13 +140,13 @@ emacs -nw local-checkin-test-defaults.py  # e.g. change -j4 to -j16
 
 **A.3) Set up local git repo on `<local-machine>`:**
 
-Add git remote [`intermediate-repo`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#intermediate_repo) in your local Trilinos repo on `<local-machine>`:
+Add git remote [`intermediate-repo`](Local-development-with-remote-pull,-test,-and-push#intermediate_repo) in your local Trilinos repo on `<local-machine>`:
 
 ```
 cd <local_trilinos_base_dir>/Trilinos/
 git remote add intermediate-repo git@github.com:<your-github-id>/Trilinos.git  # e.g. your Trilinos fork
 ```
-NOTE: You can use a different remote git repo for [`intermediate-repo`](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#intermediate_repo) other than your GitHub fork of Trilinos (see [above](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push#intermediate_repo)).
+NOTE: You can use a different remote git repo for [`intermediate-repo`](Local-development-with-remote-pull,-test,-and-push#intermediate_repo) other than your GitHub fork of Trilinos (see [above](Local-development-with-remote-pull,-test,-and-push#intermediate_repo)).
 
 If you have not already, get on a local `develop` branch:
 
@@ -220,7 +220,7 @@ ssh <local-machine>    # May require you to type a password depending on your se
 ssh <remote-machine>   # Should *NOT* require you to type a password!
 ```
 
-If the command `ssh <remote-machine>` run from `<local-machine>` requires that you type a password, then something is not set up correctly (e.g. check your permissions on the file `<remote-machine>:~/ssh/authorized_keys`, it should be user-only read/write).  If you can't get this working, don't worry, you can just skip this step and use the `blocking` mode as described [above](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_trilinos_repo_on_local).
+If the command `ssh <remote-machine>` run from `<local-machine>` requires that you type a password, then something is not set up correctly (e.g. check your permissions on the file `<remote-machine>:~/ssh/authorized_keys`, it should be user-only read/write).  If you can't get this working, don't worry, you can just skip this step and use the `blocking` mode as described [above](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup_trilinos_repo_on_local).
 
 NOTES:
 * This step is only required when using the `nonblocking` mode of the `remote-pull-test-push.sh` script.  For the `blocking` mode, one can just type the password getting to `<remote-machine>` once and everything will occur on the remote machine.
@@ -269,13 +269,13 @@ If you see that output, then all of the setup has been completed correctly.  If 
 
 ### B) Local development then remote pull, test, and push
 
-Once the above one-time [initial setup](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup) is performed, you can use the following process to develop changes on your local machine and use the remote machine to pull, test, and push your new commits.
+Once the above one-time [initial setup](Local-development-with-remote-pull%2C-test%2C-and-push#initial_setup) is performed, you can use the following process to develop changes on your local machine and use the remote machine to pull, test, and push your new commits.
 
 <a name="local_dev_remote_pull_test_push_develop_on_local"/>
 
 **B.1) Do development of Trilinos on `<local-machine>`**
 
-* Do development, make commits, do local testing as you normally would to the git repo on `<local-machine>` (see [simple centralized workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow) except for the push).  (NOTE: This can be done on the local 'develop' branch or in a local topic branch.  It works either way.)
+* Do development, make commits, do local testing as you normally would to the git repo on `<local-machine>` (see [simple centralized workflow](VC-%7C-Simple-Centralized-Workflow) except for the push).  (NOTE: This can be done on the local 'develop' branch or in a local topic branch.  It works either way.)
 * Clean up your local branch commits on `<local-machine>` with `git fetch ; git rebase -i origin/develop` **[Optional but Recommended]**.
 
 NOTE: Doing `git rebase -i` removes all of the merge commits that might have been created when doing `git pull` to keep your local branch up to date and avoid a merge conflict on `<remote-machine>`.

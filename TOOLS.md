@@ -2,11 +2,11 @@
 
 ### Version Control
 
-+ [git](https://github.com/trilinos/Trilinos/wiki/Git) - Version control and history management
++ [git](Git) - Version control and history management
 
 ### Build System
 
-+ [CMake](https://github.com/trilinos/Trilinos/wiki/CMake) **(3.5.1 preferred, 2.8.11 minimum)** - Configuration and building
++ [CMake](CMake) **(3.5.1 preferred, 2.8.11 minimum)** - Configuration and building
 
 ### Verification and Regression Testing
 
@@ -14,7 +14,7 @@
 
 + [CDash](http://www.cdash.org/) - Test results dashboard tool
 
-+ [Trilinos Test Harness](https://github.com/trilinos/Trilinos/wiki/Testing) - Test results Dashboard and test categories
++ [Trilinos Test Harness](Testing) - Test results Dashboard and test categories
 
 ### Issue and Bug Tracking
 
@@ -22,9 +22,9 @@
 
 ### Documentation Generation
 
-+ [Doxygen](https://github.com/trilinos/Trilinos/wiki/Doxygen) (1.7.4) - Documentation generation
++ [Doxygen](Doxygen) (1.7.4) - Documentation generation
 
 ### Mail Lists
 
-+ [Mailman](https://github.com/trilinos/Trilinos/wiki/Mail-Lists) - Mailing Lists
++ [Mailman](Mail-Lists) - Mailing Lists
  

@@ -4,7 +4,7 @@ The Trilinos Project Homepage can be found at [trilinos.org](https://trilinos.or
 
 We are in the process of moving the old Developer site to GitHub, while updating content in the process. A specific plan will appear here when it is available.
 
-**WARNING:** If you don't seem to be getting all of your notification emails from GitHub for updated Issues, etc., then have a look at the [GitHub Notification](https://github.com/trilinos/Trilinos/wiki/GitHub-Notifications) page to see what you can do about that.
+**WARNING:** If you don't seem to be getting all of your notification emails from GitHub for updated Issues, etc., then have a look at the [GitHub Notification](GitHub-Notifications) page to see what you can do about that.
 
 ## Links to related Trilinos Developer Sites
 

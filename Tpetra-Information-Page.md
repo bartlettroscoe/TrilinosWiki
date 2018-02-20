@@ -1,8 +1,8 @@
 ## Tpetra Development Plans
-[FY18](https://github.com/trilinos/Trilinos/wiki/Tpetra-FY18-Plan)
+[FY18](Tpetra-FY18-Plan)
 
 ## Interface changes and Deprecation
-[Changes to template parameters](https://github.com/trilinos/Trilinos/wiki/Deprecation1)  
-[Removal of DynamicProfile construction for CrsGraph and CrsMatrix](https://github.com/trilinos/Trilinos/wiki/Deprecation2)  
+[Changes to template parameters](Deprecation1)  
+[Removal of DynamicProfile construction for CrsGraph and CrsMatrix](Deprecation2)  
 
 ## Documentation

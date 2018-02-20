@@ -1,6 +1,6 @@
 ## Overview
 
-In order to maintain the stability of [Primary Tested](http://trac.trilinos.org/wiki/TribitsLifecycleModelOverview#test_categories) packages and code on the 'develop' branch of Trilinos, the checkin-test.py script can be used to test code before any push that changes source code.  A standard environment for running the pre-push CI tests has been set up based on the [SEMS Development Environment](https://github.com/trilinos/Trilinos/wiki/SEMS-Dev-Env) encapsulated in the script [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/blob/develop/cmake/std/sems/checkin-test-sems.sh).  This script makes it easy to run on any machine that has the SEMS Dev Env mounted.  To set up to use this script to test and push changes to Trilinos, do:
+In order to maintain the stability of [Primary Tested](http://trac.trilinos.org/wiki/TribitsLifecycleModelOverview#test_categories) packages and code on the 'develop' branch of Trilinos, the checkin-test.py script can be used to test code before any push that changes source code.  A standard environment for running the pre-push CI tests has been set up based on the [SEMS Development Environment](SEMS-Dev-Env) encapsulated in the script [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/blob/develop/cmake/std/sems/checkin-test-sems.sh).  This script makes it easy to run on any machine that has the SEMS Dev Env mounted.  To set up to use this script to test and push changes to Trilinos, do:
 
 ```
 cd Trilinos/
@@ -9,7 +9,7 @@ cd CHECKIN
 ln -s ../cmake/std/sems/checkin-test-sems.sh .
 ``` 
 
-(**WARNING**: The Trilinos git repo must use SSH with the remote URL `git@github.com:trilinos/Trilinos.git` and not HTTPS for access to github.  See [below note](https://github.com/trilinos/Trilinos/wiki/Policies-|-Safe-Checkin-Testing#ssh-vs-https)).
+(**WARNING**: The Trilinos git repo must use SSH with the remote URL `git@github.com:trilinos/Trilinos.git` and not HTTPS for access to github.  See [below note](Policies-|-Safe-Checkin-Testing#ssh-vs-https)).
 
 Then when one wants to test changes (and the local git repo is "clean" with no modified or untracked files), one can do:
 
@@ -19,7 +19,7 @@ cd Trilinos/CHECKIN/
 ```
 DEPRECATED: In the past there was a recommendation to use --push with this script for the develop branch. With the advent of the feature-branch workflow this is deprecated behaviour. The --push flag is still useable for feature branches.
 
-(see default options in [local-checkin-test-defaults.py](https://github.com/trilinos/Trilinos/wiki/Policies-|-Safe-Checkin-Testing#local-checkin-test-defaults.py)).  That will automatically figure out what packages are changed and will enable those packages and all of their downstream packages and [BASIC](https://tribits.org/doc/TribitsDevelopersGuide.html#test-test-category) tests.  Then if everything passes, it will rebase the commits on top of `origin/develop`, amend the top commit message with the test results summary, and push the commits (i.e. it implements the [simple centralized workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow) by default).
+(see default options in [local-checkin-test-defaults.py](Policies-|-Safe-Checkin-Testing#local-checkin-test-defaults.py)).  That will automatically figure out what packages are changed and will enable those packages and all of their downstream packages and [BASIC](https://tribits.org/doc/TribitsDevelopersGuide.html#test-test-category) tests.  Then if everything passes, it will rebase the commits on top of `origin/develop`, amend the top commit message with the test results summary, and push the commits (i.e. it implements the [simple centralized workflow](VC-%7C-Simple-Centralized-Workflow) by default).
 
 ## Other workflows
 
@@ -61,7 +61,7 @@ Also, one can test any set of packages `<pkg0>`, `<pkg1>`, etc. (and not downstr
 
 One can also run any individual step by replacing `--do-all` and `--local-do-all` with the action commands `--pull`, `--configure`, `--build`, and/or `--test` (the script keep memory of what steps have been performed already).
 
-If the configure, build or any tests fail, then one can easily reproduce them just like for any regular build of Trilinos by sourcing the script [load_ci_sems_dev_env.sh](https://github.com/trilinos/Trilinos/wiki/SEMS-Dev-Env#load_ci_sems_dev_env.sh) and doing the following (in an `sh` compatible shell, **not (t)csh**):
+If the configure, build or any tests fail, then one can easily reproduce them just like for any regular build of Trilinos by sourcing the script [load_ci_sems_dev_env.sh](SEMS-Dev-Env#load_ci_sems_dev_env.sh) and doing the following (in an `sh` compatible shell, **not (t)csh**):
 
 ## Reproducing failures manually
 
@@ -95,7 +95,7 @@ Many other use cases are also supported.  Some detailed documentation on the che
 
 * The standard pre-push CI build env is currently chosen to be the Sandia Linux RHEL 6 or 7 COE with the SEMS env.  It is recommended that Trilinos developers test and push from one of these machines, or ask someone else with access to one of these machines to push for you.  (Please contact trilinos-framework at software.sandia.gov if you do not have access and time on one of these systems.  Most Sandia staff can be given lab-support systems for this purpose.).
 
-* One can do development on any machine with any env one wishes and then use a remote SNL Linux RHEL 6 or 7 machine with the SEMS env to do a [remote pull, test, and push](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull%2C-test%2C-and-push) of the commits.  (Or, one can just manually move the branch from the local repo to an SNL RHEL 6 or 7 machine and run the checkin-test-sems.sh script from there.)
+* One can do development on any machine with any env one wishes and then use a remote SNL Linux RHEL 6 or 7 machine with the SEMS env to do a [remote pull, test, and push](Local-development-with-remote-pull%2C-test%2C-and-push) of the commits.  (Or, one can just manually move the branch from the local repo to an SNL RHEL 6 or 7 machine and run the checkin-test-sems.sh script from there.)
 
 <a name="raw_checkin_test_py"/>
 

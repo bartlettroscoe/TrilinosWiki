@@ -14,9 +14,9 @@ The Trilinos github repository contains several long-lived branches:
 The following links provide information on Trilinos version control processes and workflows.
 
 * See [How to Do Version Control with Git in Your CSE Project](http://ideas-productivity.org/wordpress/wp-content/uploads/2015/04/IDEAS-VCHowToVersionControlwithGit-V0.2.pdf) (an [IDEAS Productivity "How To" Document](https://ideas-productivity.org/resources/howtos/)).
-* Do an [initial setup to use git](https://github.com/trilinos/Trilinos/wiki/VC-|-Initial-Git-Setup) on any new machine.
-* Use the [simple centralized workflow](https://github.com/trilinos/Trilinos/wiki/VC-|-Simple-Centralized-Workflow) to integrate and push changes to a shared remote tracking branch (i.e. the 'develop' branch).
-* For typical development, most developers will checkout, make changes, and push changes to the ['develop' branch](https://github.com/trilinos/Trilinos/wiki/VC-|-'develop'-'master'-workflow).
+* Do an [initial setup to use git](VC-|-Initial-Git-Setup) on any new machine.
+* Use the [simple centralized workflow](VC-|-Simple-Centralized-Workflow) to integrate and push changes to a shared remote tracking branch (i.e. the 'develop' branch).
+* For typical development, most developers will checkout, make changes, and push changes to the ['develop' branch](VC-|-'develop'-'master'-workflow).
 * To fix defects on a release branch, use the [release branch merge workflow](???).
 
 <!--- We have not agreed to how multiple git repos will be handled yet.  See Trilinos GitHub Issue #452

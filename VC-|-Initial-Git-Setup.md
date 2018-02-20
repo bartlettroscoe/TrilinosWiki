@@ -31,4 +31,4 @@ cd Trilinos/
 git remote set-url --push origin git@github.com:<username>/Trilinos.git
 ```
 
-(see [feature-branch/develop/master workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-'develop'-'master'-workflow))
+(see [feature-branch/develop/master workflow](VC-%7C-'develop'-'master'-workflow))

@@ -2,9 +2,9 @@
 
 **Contents:**
 
-* [Overview](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#overview)
-* [Categories of Tests](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#categories_of_tests)
-* [Finding information on CDash](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#finding_info_on_cdash)
+* [Overview](Policies--|-Testing#overview)
+* [Categories of Tests](Policies--|-Testing#categories_of_tests)
+* [Finding information on CDash](Policies--|-Testing#finding_info_on_cdash)
 
 <a name="overview"/>
 
@@ -43,16 +43,16 @@ Links to main Trilinos CDash dashboard results and query tools:
 
 The different categories of Trilinos testing are:
 
-+ [Pull-request testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#pull_request_testing)
-+ [Deprecated : Pre-push Continuous Integration Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#pre_push_ci_testing)
-+ [Post-push Continuous Integration Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#post_push_ci_testing)
-+ [Nightly Regression Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#nightly_regression_testing)
-+ [Performance Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#performance_testing)
-+ [Installation Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#installation_testing)
-+ [Experimental Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#experimental_testing)
-+ [Coverage Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#coverage_testing)
-+ [Memory Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#memory_testing)
-+ [Scalability Testing](https://github.com/trilinos/Trilinos/wiki/Policies--|-Testing#scalability_testing)
++ [Pull-request testing](Policies--|-Testing#pull_request_testing)
++ [Deprecated : Pre-push Continuous Integration Testing](Policies--|-Testing#pre_push_ci_testing)
++ [Post-push Continuous Integration Testing](Policies--|-Testing#post_push_ci_testing)
++ [Nightly Regression Testing](Policies--|-Testing#nightly_regression_testing)
++ [Performance Testing](Policies--|-Testing#performance_testing)
++ [Installation Testing](Policies--|-Testing#installation_testing)
++ [Experimental Testing](Policies--|-Testing#experimental_testing)
++ [Coverage Testing](Policies--|-Testing#coverage_testing)
++ [Memory Testing](Policies--|-Testing#memory_testing)
++ [Scalability Testing](Policies--|-Testing#scalability_testing)
 
 These different categories of testing are described in more detail below.
 
@@ -66,7 +66,7 @@ When a new pull request is issued to the trilinos/Trilinos repository [Trilinos/
 
 **Deprecated : Pre-push Continuous Integration Testing**: Primary Tested Code [[Checkin test mailing list](https://software.sandia.gov/pipermail/trilinos-checkin-tests/)]
 
-Previously, before every push to the global Trilinos git repository 'develop' branch, the Trilinos [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) script would be used to test all affected [Primary Tested (PT) Code](http://trac.trilinos.org/wiki/TribitsLifecycleModelOverview#test_categories). The pull request testing system is replacing this functionality as it tests more platorms and can be readily expanded as needed. The purpose for this type of testing is to a) do a basic smoke test to make sure nothing significant has been broken, and b) provide a consistent basis of comparison across all developers to determine if it is safe to push.
+Previously, before every push to the global Trilinos git repository 'develop' branch, the Trilinos [checkin-test-sems.sh](Policies-%7C-Safe-Checkin-Testing) script would be used to test all affected [Primary Tested (PT) Code](http://trac.trilinos.org/wiki/TribitsLifecycleModelOverview#test_categories). The pull request testing system is replacing this functionality as it tests more platorms and can be readily expanded as needed. The purpose for this type of testing is to a) do a basic smoke test to make sure nothing significant has been broken, and b) provide a consistent basis of comparison across all developers to determine if it is safe to push.
 
 The main purpose of this type of testing is to protect other developers so they can continue their development work after pulling changes from the 'develop' branch. The selection of PT packages is done based on usage by important Trilinos customers (see [Trilinos GitHub Issue #410](https://github.com/trilinos/Trilinos/issues/482)).  However, 
 

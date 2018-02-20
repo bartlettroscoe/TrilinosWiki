@@ -17,7 +17,7 @@ The motivation for the usage of a 'develop' branch and the full set of mechanics
 <a name="transition_feature_develop_master"/>
 # Transitioning to a feature-branch/develop/master workflow
 
-For developers accustomed to the previous single branch Trilinos development model (the [Simple Centralized Workflow](https://github.com/trilinos/Trilinos/wiki/VC-|-Simple-Centralized-Workflow)), the transition to the feature-branch/develop/master workflow is not complicated. In essence, you make changes to the feature branch, rather than the develop or master branch. A few extra details, and commands for doing this are below. These commands will be needed every time the Trilinos repository is cloned.
+For developers accustomed to the previous single branch Trilinos development model (the [Simple Centralized Workflow](VC-|-Simple-Centralized-Workflow)), the transition to the feature-branch/develop/master workflow is not complicated. In essence, you make changes to the feature branch, rather than the develop or master branch. A few extra details, and commands for doing this are below. These commands will be needed every time the Trilinos repository is cloned.
 
 If the local repo is clean (i.e. no local modifications or untracked files), then one just needs to get on a local 'develop' tracking branch.  If the local 'develop' tracking branch has not already been created, then create it using:
 
@@ -36,16 +36,16 @@ $ cd Trilinos/
 [(develop)]$ 
 ```
 
-Once on the local 'develop' branch which is tracking the remote 'origin/develop' branch, simply create a local branch for your new development. changes from develop or your local feature branch can be freely pushed to your fork on github to share with other developers or to simply preserve the code in case of local failuure. When all is ready to integrate simply issue a pull request on github from your feature branch to trilinos:develop. See [feature branch workflow](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Simple-Centralized-Workflow).
+Once on the local 'develop' branch which is tracking the remote 'origin/develop' branch, simply create a local branch for your new development. changes from develop or your local feature branch can be freely pushed to your fork on github to share with other developers or to simply preserve the code in case of local failuure. When all is ready to integrate simply issue a pull request on github from your feature branch to trilinos:develop. See [feature branch workflow](VC-%7C-Simple-Centralized-Workflow).
 
-NOTE: The [checkin-test-sems.sh](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Safe-Checkin-Testing) script can be used on the 'develop' branch to locally test modifications.
+NOTE: The [checkin-test-sems.sh](Policies-%7C-Safe-Checkin-Testing) script can be used on the 'develop' branch to locally test modifications.
 
 <a name="move_to_feature_branch"/>
 # Move local changes to a feature branch
 
 The below process applies only to situations where a Trilinos developer has made changes to the local git repo's 'master' or 'develop' branch and needs to transfer the changes to their local feature branch, where they can be pushed to their github fork. This will be common only during the initial transition to the feature-branch workflow.
 
-Before getting started, Trilinos developers can optionally set up their local account to use the git usability scripts git-prompt.sh and git-completion.bash and enable git `rerere` as described [here](https://github.com/trilinos/Trilinos/wiki/VC-%7C-Initial-Git-Setup).  The shell scripts will make it obvious what local branch a developer is on and git `rerere` will help with the rebasing and merging commands required to transition local commits.
+Before getting started, Trilinos developers can optionally set up their local account to use the git usability scripts git-prompt.sh and git-completion.bash and enable git `rerere` as described [here](VC-%7C-Initial-Git-Setup).  The shell scripts will make it obvious what local branch a developer is on and git `rerere` will help with the rebasing and merging commands required to transition local commits.
 
 The below process assumes:
 * Changes to be moved to the feature branch have been committed to the local 'master' branch, but not pushed.

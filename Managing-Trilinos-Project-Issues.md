@@ -78,7 +78,7 @@ Filtered searches can be bookmarked. For example, the URL to the Kanban board fo
 
 ## <a name="processing-new-issues"></a>Processing New GitHub Issues
 
-(Note: a summary of this information is available on the [New Issue Cheat Sheet](https://github.com/trilinos/Trilinos/wiki/New-Issue-Cheat-Sheet))
+(Note: a summary of this information is available on the [New Issue Cheat Sheet](New-Issue-Cheat-Sheet))
 
 Using the waffle.io filtering capability mentioned above, it is possible to find all of the issues with no labels applied to them using the "Unlabeled" label filter. When issues are submitted without labels, the below steps should be taken to properly review and categorize the new issue. This can be done by a developer who was mentioned in the issue, or by a member of the team that was mentioned in the issue. (If the framework team was mentioned by default, they will mention the appropriate team/developer so that this process can be followed.) Individual packages may have a policy that the package lead should follow this process for any issue that mentions the package team. Developers are also asked to complete these steps when filing a new issue so that it is immediately properly categorized:
 

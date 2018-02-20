@@ -13,7 +13,7 @@ Below are some of the policies used by the Trilinos Project.
 
 ### Trilinos Framework and Tools Issues
 
-+ [Policies associated with and list of Trilinos repositories](https://github.com/trilinos/Trilinos/wiki/Policies-%7C-Trilinos-Repositories)
++ [Policies associated with and list of Trilinos repositories](Policies-%7C-Trilinos-Repositories)
 
 + How to make feature requests for the Trilinos Framework
 
@@ -39,11 +39,11 @@ Below are some of the policies used by the Trilinos Project.
 
 + [Namespace safety and use of standard C++ headers](https://software.sandia.gov//trilinos/developer/policies/namespace_safety.html)
 
-### [Testing](https://github.com/trilinos/Trilinos/wiki/Testing)
+### [Testing](Testing)
 
-+ [Proper pre-checkin process](https://github.com/trilinos/Trilinos/wiki/Safe-Checkin-Testing)
++ [Proper pre-checkin process](Safe-Checkin-Testing)
 
-+ [Remote testing and push process](https://github.com/trilinos/Trilinos/wiki/Local-development-with-remote-pull,-test,-and-push)
++ [Remote testing and push process](Local-development-with-remote-pull,-test,-and-push)
 
 + [Developer policies for maintaining the stability of Trilinos](https://software.sandia.gov//trilinos/developer/policies/developer_maintaining_stability.html)
 
