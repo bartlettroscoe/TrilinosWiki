@@ -28,7 +28,7 @@ Links to main Trilinos CDash dashboard results and query tools:
    + Tip: To exclude bad packages (i.e. packages with build and/or test failures) from the build summaries, click [Show Filters] and then select the filter ('Subprojects', 'exclude', '<BAD_PACKAGE_NAME>').
 + Test query page:
  + [All tests for current day](https://testing.sandia.gov/cdash/queryTests.php?project=Trilinos&showfilters=1) (allows any type of query) [**Warning**: very slow to come up]
- + [Failing tests for current day](https://testing.sandia.gov/cdash/queryTests.php?project=Trilinos&date=2018-01-16&filtercount=1&showfilters=1&field1=status&compare1=62&value1=Passed) (can only query failed tests) [Comes up fast]
+ + [Failing tests for current day](https://testing.sandia.gov/cdash/queryTests.php?project=Trilinos&filtercount=1&showfilters=1&field1=status&compare1=62&value1=Passed) (can only query failed tests) [Comes up fast]
    + Tip: To see all runs for a given test `<TestName>`, use filter ('Test Name', 'starts with', '`<TestName>`')
    + Tip: To query results for `<PACKAGEX>`, select the filter ('Test Name', 'starts with', '`PACKAGEX_`')
    + Tip: To query passing tests, select the filter ('Status', 'is', 'passed') [Note the lower case 'passed')
