@@ -7,7 +7,7 @@ The simple centralized workflow (i.e. the git equivalent of SVN) is outlined on 
 * “Your team can develop projects in the exact same way as they do with Subversion.”
 * “Before the developer can publish their feature, they need to fetch the updated central commits and rebase their changes on top of them. This is like saying, “I want to add my changes to what everyone else has already done.” The result is a perfectly linear history, just like in traditional SVN workflows”
 
-## Trilinos is moving towards a feature branch workflow which builds on top of the centralized workflow as outlined at [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) whith develop as the central branch instead of master.  As stated on that page:
+## Trilinos is moving towards a feature branch workflow which builds on top of the centralized workflow as outlined at [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) with develop as the central branch instead of master.  As stated on that page:
 
 * "Aside from isolating feature development, branches make it possible to discuss changes via pull requests. Once someone completes a feature, they don’t immediately merge it into develop. Instead, they push the feature branch to the central server and file a pull request asking to merge their additions into develop. This gives other developers an opportunity to review the changes before they become a part of the main codebase."
 
