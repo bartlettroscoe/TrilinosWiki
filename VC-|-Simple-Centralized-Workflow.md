@@ -28,8 +28,8 @@ In our case this also facilitates automated testing for each pull request on a n
 |                                               | ... Test changes (i.e. using checkin-test-sems.sh) ... |
 | **Push changes to your fork:**                | `git checkout develop`
 |                                               | `git pull --rebase` (from `origin/develop`) |
-|                                               | `git checkout cool-new-feature-name |
-|                                               | `git rebase master`
+|                                               | `git checkout cool-new-feature-name` |
+|                                               | `git rebase develop`
 |                                               | `git push cool-new-feature-name`  (to your push-url) |
 | **Issue a pull request on the github site:**  | from your_fork:cool-new-feature-name to trilinos:develop |
 | **Request reviews and/or assign someone:**    | |
