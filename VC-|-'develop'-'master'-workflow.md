@@ -4,6 +4,7 @@
 * [Moving local changes to the 'develop' branch](#move_to_develop)
 
 <a name="overview"/>
+
 # Overview
 
 The Trilinos project uses a long-lived branch called 'develop' to conduct basic development.  All Trilinos developers directly pull from and request pulls to the shared github 'develop' branch.  Then, the 'master' branch is updated from the 'develop' branch when it passes a specific set of builds for a specific set of packages (the set of packages and builds will evolve over time).  This is depicted in the below figure:
@@ -15,6 +16,7 @@ The motivation for the usage of a 'develop' branch and the full set of mechanics
 (NOTE: The "bug-fix" workflow elements shown in the above figure are not described below but are described in great detail in the [above reference](https://docs.google.com/document/d/1uVQYI2cmNx09fDkHDA136yqDTqayhxqfvjFiuUue7wo/edit#heading=h.u2ougk1wk7ph).  If things go well, then these "bug fix" commits should almost never be needed.  But in the rare cases these "bug-fix" commits or revert commits are needed/desired, then more experienced Trilinos git developers can help make those changes.)
 
 <a name="transition_feature_develop_master"/>
+
 # Transitioning to a feature-branch/develop/master workflow
 
 For developers accustomed to the previous single branch Trilinos development model (the [Simple Centralized Workflow](VC-|-Simple-Centralized-Workflow)), the transition to the feature-branch/develop/master workflow is not complicated. In essence, you make changes to the feature branch, rather than the develop or master branch. A few extra details, and commands for doing this are below. These commands will be needed every time the Trilinos repository is cloned.
@@ -41,6 +43,7 @@ Once on the local 'develop' branch which is tracking the remote 'origin/develop'
 NOTE: The [checkin-test-sems.sh](Policies-%7C-Safe-Checkin-Testing) script can be used on the 'develop' branch to locally test modifications.
 
 <a name="move_to_feature_branch"/>
+
 # Move local changes to a feature branch
 
 The below process applies only to situations where a Trilinos developer has made changes to the local git repo's 'master' or 'develop' branch and needs to transfer the changes to their local feature branch, where they can be pushed to their github fork. This will be common only during the initial transition to the feature-branch workflow.
