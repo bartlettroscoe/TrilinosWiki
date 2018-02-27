@@ -30,7 +30,7 @@ The number of Clean Group builds is intentionally kept small. To request the add
 
 ### Maintaining a Build
 
-Failures in clean builds are to be corrected immediately by backing out the commit that caused the failure. Any Trilinos developer is authorized to submit a pull request that backs out the offending commit(s) that caused a failure to a clean group build. This is done to restore the failing clean build(s) to a good state, and recognizes the fact that no pull-request tests involving the failing configure, build, or test will pass until the defect is removed. Once Pull-request testing is made mandatory, Clean Group failures should be very rare, as pull request testing will fail in all cases that Clean Group testing fails, except for a few corner cases.
+Failures in clean builds are to be corrected immediately by backing out the commit that caused the failure. Any Trilinos developer is authorized to submit a pull request that backs out the offending commit(s) that caused a failure to a clean group build. A related issue should also be filed in GitHub and assigned to the initial commit author. This is done to restore the failing clean build(s) to a good state, and recognizes the fact that no pull-request tests involving the failing configure, build, or test will pass until the defect is removed. Once Pull-request testing is made mandatory, Clean Group failures should be very rare, as pull request testing will fail in all cases that Clean Group testing fails, except for a few corner cases.
 
 ### Expectations
 
