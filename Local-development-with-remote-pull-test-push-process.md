@@ -72,7 +72,7 @@ If the configure, build, or any tests fail, then the errors much be resolved.  T
 ```
 $ ssh <remote-machine>
 $ cd Trilinos/CHECKIN/
-$ source ../Trilinos/cmake/load_ci_sems_dev_env.sh
+$ source ../Trilinos/cmake/load_sems_dev_env.sh
 $ cd MPI_RELEASE_DEBUG_SHARED_PT/
 $ make   # Reproduce the build failure
 $ ctest -j<N> -R <test-name>  # Reproduce the test failure

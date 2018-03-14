@@ -385,7 +385,7 @@ The following steps describe how to reproduce and address failures on `<remote-m
 ```
 ssh <remote-machine>
 cd <remote_trilinos_base_dir>/Trilinos/CHECKIN/
-source ../cmake/load_ci_sems_dev_env.sh
+source ../cmake/load_sems_dev_env.sh
 cd MPI_RELEASE_DEBUG_SHARED_PT/
 less configure.out           # View cmake configure output/errors
 ./do-configure               # Reproduce configure failure
